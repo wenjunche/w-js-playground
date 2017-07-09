@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="http://openfin.github.io/snap-and-dock/DockingManager.js"></script>
+
+    <script type="text/javascript">
+    	
+        fin.desktop.main(function() {
+        	let dockingManager = DockingManager.getInstance();
+            dockingManager.spacing = 1;
+        	fin.desktop.System.addEventListener("application-started", event => {
+
+        		let dw = fin.desktop.Window.wrap(event.uuid, event.uuid);
+        		dockingManager.register(dw);
+
+        	});
+		})
+
+    </script>
+</head>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Air Container Window</title>
+    <script language="javascript">
+        
+        fin.desktop.main(function() {
+            fin.desktop.InterApplicationBus.subscribe('*', 'window-docked', onDock);
+            fin.desktop.InterApplicationBus.subscribe('*', 'window-undocked', onUnDock);
+        });
+
+        function onDock(event) {
+            if (event.windowName === window.name) {
+                document.getElementById('titlebar').style.backgroundColor = "green";
+                document.getElementById('right').style.backgroundColor = "green";
+                document.getElementById('left').style.backgroundColor = "green";
+                document.getElementById('footer').style.backgroundColor = "green";
+            }
+        }
+
+        function onUnDock(event) {
+            if (event.windowName === window.name) {
+            }
+        }
+
+    </script>
+    <style>
+    html,
+    body {
+        min-height: 100%;
+        margin: 0px;
+        padding: 0px;
+        background-color: gray;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+        
+    .windowContent {
+        padding: 10px;
+        height: 94px;
+    }
+    
+    #titlebar {
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+        background-color: aqua;
+        width: 100%;
+        height: 30px;
+    }
+    
+    #title {
+        padding: 2px 0 0 0;        
+    }
+    
+    .closeButton,
+    .minimizeButton {
+        background-color: azure;
+        text-align: center;
+        -webkit-app-region: no-drag;
+        font-family: verdana;
+        font-size: 12px;
+        font-weight: bold;
+        -webkit-user-select: none;
+        padding: 2px;
+        cursor: pointer;
+    }
+    
+    .closeButton:hover,
+    .minimizeButton:hover {
+        background-color: aqua,
+        cursor: pointer;
+        color: red;
+    }
+    
+    #left {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+        bottom: 30px;
+        background-color: aqua;
+        width: 30px;
+        display: table-cell;
+    }
+
+    #right {
+        position: absolute;
+        top: 30px;
+        right: 0px;
+        bottom: 30px;
+        background-color: aqua;
+        width: 30px;
+        display: table-cell;
+    }
+
+    #footer {
+        position: absolute;
+        bottom: 0px;
+        background-color: aqua;
+        width: 100%;
+        height: 30px;        
+    }
+
+    #container {
+    }
+
+    </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="titlebar">
+        <table id="title" width="100%">
+            <tr>
+                <td width="85%">
+                    <div id="title"> </div>
+                </td>
+                <td>
+                    <div class="minimizeButton" onclick="fin.desktop.Window.getCurrent().minimize()">_</div>
+                </td>
+                <td>
+                    <div class="closeButton" onclick="fin.desktop.Window.getCurrent().close()">X</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="left"></div>
+    <div id="right"></div>
+    <div id="footer"></div>
+
+  </div>
+</body>
+</html>

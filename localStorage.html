@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+Hello, world!
+<div id="value">nope</div>
+<div id="value2">nope</div>
+<script>
+
+  function init() {
+	  var a = localStorage.getItem('someItem');
+	  document.getElementById('value').innerHTML = 'value is ' + a;
+	  localStorage.setItem('someItem', 'value' + Math.round(Math.random()*1000));
+	  a = localStorage.getItem('someItem');
+	  document.getElementById('value2').innerHTML = 'value is ' + a;
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+
+</script>
+</body>
+</html>

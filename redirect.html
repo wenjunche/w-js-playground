@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Redirect</title>
+    <style>
+    #titlebar {
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+        background-color: aqua;
+        padding: 3px;
+        padding-left: 10px;
+    }
+    </style>
+
+    <script type="text/javascript">
+
+        window.addEventListener("DOMContentLoaded", function() {
+            fin.desktop.main(function () {
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="titlebar" style="height: 100px; width: 100px;">
+    </div>
+    <div id='id1' style="width: 100px;height: 100px"></div>
+    <!--script type="text/javascript">
+        var myDiv = document.getElementById('id1');
+        var num = 1;
+        setInterval(function(){
+            myDiv.innerHTML = " " + num++;
+        }, 100);
+    </script-->   
+    <script type="text/javascript">
+        var myDiv = document.getElementById('id1');
+        var num = 1;
+        setInterval(function(){
+            myDiv.innerHTML = " " + num++;
+        }, 1);        
+    </script> 
+    <!--div id="console">
+        <div>
+            <div>
+                <a href=" https://google.com">redirect</a>
+                <a href="index.html">back</a>
+            </div>
+        </div-->
+</body>
+
+</html>

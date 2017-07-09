@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <script type="text/javascript">
+        var self;
+
+        function finMain() {
+            fin.desktop.main(function () {
+                self = fin.desktop.Notification.getCurrent();
+                self.sendMessageToApplication("message from notification");
+            });
+         }
+            
+        // messages received from the application creating the application
+        function onNotificationMessage(message) {
+            console.log(JSON.stringify(message));
+        }
+        function closeNotification() {
+            self = fin.desktop.Notification.getCurrent();
+            self.close();
+        }
+
+
+        function init() {
+            document.getElementById("finMain").onclick = finMain;
+            document.getElementById("close").onclick = closeNotification;
+        }
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</head>
+<body>
+    <div>My notification example</div>
+    <div>
+        <button id="finMain">Fin.Main</button>
+        <Button id="close">Close</Button>
+    </div>
+</body>
+</html>

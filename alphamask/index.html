@@ -1,0 +1,54 @@
+
+<html>
+<head>
+  <title>Demo Alpla Mask</title>
+  <style type="text/css">
+  	body {
+  		background-color: gainsboro;
+  	}
+  	.drag {
+  		-webkit-app-region: drag;
+  		padding: 0;
+  		margin: 0;
+  		top: 0;
+  		left: 0;
+  		width: 100%;
+  		height: 90%;
+  		display: flex;
+  		justify-content: center;
+  		align-items: center;
+  	}
+  	.hole {
+  		width: 50%;
+  		height: 50%;
+  		background-color:rgb(255,0,255);
+  	}
+  	#close {
+  		-webkit-app-region: no-drag;
+  		cursor: pointer;
+  		width: 70px;
+  	}
+  </style>
+  <script type="text/javascript">
+  	function init() {
+  		fin.desktop.main(function() {
+  			console.log('connected to OpenFin Runtime');
+        	document.getElementById("close").onclick = function() {
+        		fin.desktop.Application.getCurrent().close(true);
+        	};
+  		})
+  	}
+	document.addEventListener('DOMContentLoaded', init);
+  </script>
+</head>
+<body>
+	
+	<div>The outer div can be dragged</div>
+	<div class="drag">
+		<div class="hole"></div>
+	</div>
+	<div id="close">close app</div>
+
+</body>
+</html>
+

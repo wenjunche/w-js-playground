@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello OpenFin</title>
+    <!--script src="js/DockingManager.js" language="JavaScript"></script-->
+    <script src="js/Docking.js" language="JavaScript"></script>
+    <script src="js/async.js" language="JavaScript"></script>
+    <!--script src="http://test.openf.in/test/test.js" language="JavaScript"></script-->
+
+    <script type="text/javascript">
+        window.addEventListener("load", function load(event){
+                console.log('loaded event');
+        });
+        
+        function selectMouseDown(evt){
+//              var finWindow = fin.desktop.Window.getCurrent();
+//              finWindow.bringToFront();
+//              evt.stopPropagation();
+            console.log("hasFocus", document.hasFocus())
+            if (evt && evt.target) {
+              console.log("selectMouseDown ", evt.target.tagName);
+            } else {
+              console.log("selectMouseDown ", document.activeElement.tagName);
+            }
+        };
+
+        function bodyFocus(evt) {
+            console.log("hasFocus", document.hasFocus())
+            if (evt.target === document.getElementById('selectList')) {
+              console.log("Select focus");
+            } else {
+              console.log("Body focus");
+            }
+        }
+
+        function hello() {
+          console.log("Hello");
+        }
+
+        function init() {
+//          document.getElementById('selectList').addEventListener("mousedown", selectMouseDown);
+//          document.getElementById('selectList').addEventListener("click", selectMouseDown, false);
+//          var body = document.getElementsByTagName("body")[0];
+//          document.body.addEventListener('click', bodyFocus, false);
+
+          var pdfData =
+              'JVBERi0xLjcKCjEgMCBvYmogICUgZW50cnkgcG9pbnQKPDwKICAvVHlwZSAvQ2F0YWxvZwog' +
+              'IC9QYWdlcyAyIDAgUgo+PgplbmRvYmoKCjIgMCBvYmoKPDwKICAvVHlwZSAvUGFnZXMKICAv' +
+              'TWVkaWFCb3ggWyAwIDAgMjAwIDIwMCBdCiAgL0NvdW50IDEKICAvS2lkcyBbIDMgMCBSIF0K' +
+              'Pj4KZW5kb2JqCgozIDAgb2JqCjw8CiAgL1R5cGUgL1BhZ2UKICAvUGFyZW50IDIgMCBSCiAg' +
+              'L1Jlc291cmNlcyA8PAogICAgL0ZvbnQgPDwKICAgICAgL0YxIDQgMCBSIAogICAgPj4KICA+' +
+              'PgogIC9Db250ZW50cyA1IDAgUgo+PgplbmRvYmoKCjQgMCBvYmoKPDwKICAvVHlwZSAvRm9u' +
+              'dAogIC9TdWJ0eXBlIC9UeXBlMQogIC9CYXNlRm9udCAvVGltZXMtUm9tYW4KPj4KZW5kb2Jq' +
+              'Cgo1IDAgb2JqICAlIHBhZ2UgY29udGVudAo8PAogIC9MZW5ndGggNDQKPj4Kc3RyZWFtCkJU' +
+              'CjcwIDUwIFRECi9GMSAxMiBUZgooSGVsbG8sIHdvcmxkISkgVGoKRVQKZW5kc3RyZWFtCmVu' +
+              'ZG9iagoKeHJlZgowIDYKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDEwIDAwMDAwIG4g' +
+              'CjAwMDAwMDAwNzkgMDAwMDAgbiAKMDAwMDAwMDE3MyAwMDAwMCBuIAowMDAwMDAwMzAxIDAw' +
+              'MDAwIG4gCjAwMDAwMDAzODAgMDAwMDAgbiAKdHJhaWxlcgo8PAogIC9TaXplIDYKICAvUm9v' +
+              'dCAxIDAgUgo+PgpzdGFydHhyZWYKNDkyCiUlRU9G';
+
+              //document.getElementById("embedPdf").data = "data:application/pdf;base64," + pdfData;
+
+              //window.addEventListener('dragover', function(e) {
+              //  console.log(e);
+              //  e.preventDefault();
+              //});
+
+              //window.addEventListener('drop', function(e) {
+              //  console.log(e);
+              //  e.preventDefault();
+              //});
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+
+    </script>
+
+
+</head>
+
+<body style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+
+    <div id="console">
+        <a name="top"></a>
+        <div>
+            <div>
+                <Button id="createWindows"> Createee Window </Button>
+                <Button id="createApp"> Create App </Button>
+                <Button id="getStates"> Get States </Button>
+                <Button id="bringChild"> Bring child to front </Button>
+                <Button id="printMe" draggable="true"> Print </Button>
+                <Button id="showNotification">Create notification</Button>
+                <Button id="closeNotification">Close notification</Button>
+                <Button id="NotificationCenter"> Notification Center </Button>
+                <Button id="Max"> Max </Button>
+                <Button id="Restore"> Restore </Button>
+                <Button id="Devtools"> DevTools </Button>
+                <Button id="Speak"> Speak </Button>
+                <form action="redirect.html" autocomplete="on" >
+                  <input  id="textInput" name="textInput" type="email" style="width: 60px" autocomplete="on" ></input>
+                  <button type="submit">submit</button>
+                </form>
+        <a name="top2"></a>
+                <a href="redirect.html">redirect</a>
+                <a href="https://cdn.openfin.co/examples/junit/SimpleOpenFinApp.html">redirect2</a>
+                <a href="http://fzs.sve-mo.ba/sites/default/files/dokumenti-vijesti/sample.pdf">PDF</a>
+                <Button id="base64Pdf"> Base64 PDF </Button>
+                <a href="mailto:mark@openfin.co">Mail</a>
+            </div>
+        </div>
+        <textarea id="bounds" cols="40" rows="4"></textarea>
+        <textarea id="states" cols="40" rows="4"></textarea>
+       <select id="selectList" style="color: Yellow; background:red" >
+                         <option value="volvo">Volvo</option>
+                         <option value="saab">Saab</option>
+                         <option value="mercedes">Mercedes</option>
+                         <option value="ford">Ford</option>
+                         <option value="chevy">Chevy</option>
+                         <option value="mazda">Mazda</option>
+                         <option value="toyota">Toyota</option>
+                         <option value="nissan">Nissan</option>
+                         <option value="honda">Honda</option>
+       </select>
+
+    </div>
+
+    <div id="dimentions"> </div>
+
+    <a href="https://developer.mozilla.org" target="_blank" id="MDN">MDN</a>
+
+    <a href="http://www.google.com" target="popup" onclick="window.open('http://www.google.com','name','width=600,height=400')">Open page in new window</a>
+
+     <a href="about:blank" target="_blank" >Blank</a>
+
+    <div>     
+     <a href="https://google.com">Redirect Google</a>
+     <a href="https://google.com" target="_blank">Popup Google</a>
+     <a href="http://www.awesomium.com/" target="_blank">Popup awesomium</a>
+     <a href="http://www.awesomium.com/support/" target="_blank">Popup awesomium support</a>
+    </div>
+    <div>     
+     <a href="https://webrtc.github.io/samples/src/content/getusermedia/gum/" target="_blank">Basic getUserMedia demo</a>
+    </div>
+    <div>     
+     <a href="https://webrtc.github.io/samples/src/content/devices/input-output/" target="_blank">Select camera, microphone and speaker</a>
+    </div>
+    <div>     
+     <a href="https://webrtc.github.io/samples/src/content/peerconnection/pc1/" target="_blank">Basic peer connection</a>
+    </div>
+     <a href="https://apprtc.appspot.com/" target="_blank">AppRTC video chat client</a>
+    </div>
+    <div>    
+     <a href="https://test.webrtc.org/" target="_blank">WebRTC Troubleshoot</a>
+    </div>
+    <div>    
+     <a href="empty.html" target="_blank">Empty page</a>
+    </div>
+    <div>    
+     <a href="file:///C:/Users/richard/Downloads/tullet-docking-demo/static/index.html" target="_blank">Local File</a>
+    </div>
+    <div>    
+     <a href="https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/test.csv" download='c://test.csv'>Download File</a>
+    </div>
+    <div id="customContextMenu">Custom Context Menu</div>
+    <a href="#top">top top</a>
+    <a href="fins://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/snap.json">snap</a>
+      <!--object id="embedPdf" width="500" height="500" alt="pdf" type="application/pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" title="HelloWorld">
+      </object-->
+
+      <!--iframe> width="420" height="315" src="https://www.youtube.com/embed/wZZ7oFKsKzY" frameborder="0" allowfullscreen></iframe-->
+
+      <!--iframe  width="420" height="315" src="https://httpbin.org/basic-auth/user/passwd"></iframe-->
+
+      <!--img src="https://httpbin.org/basic-auth/user/passwd"/-->
+      <!--iframe id="iframe1" width="100" height="100" src="http://localhost:8081" frameborder="0">
+      </iframe-->
+        
+  <svg height="100" width="100">
+    <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+        Sorry, your browser does not support inline SVG.
+  </svg>
+  <svg height="150" width="500">
+    <ellipse cx="240" cy="100" rx="220" ry="30" style="fill:purple" />
+    <ellipse cx="220" cy="70" rx="190" ry="20" style="fill:lime" />
+    <ellipse id="ellipse3" cx="210" cy="45" rx="170" ry="15" style="fill:yellow" />
+        Sorry, your browser does not support inline SVG.
+  </svg>
+
+<nav id="context-menu-nav" style="display: none; position: absolute; background-color: yellow">
+  <ul class="context-menu__items">
+    <li class="context-menu__item">
+      <a href="#" class="context-menu__link">
+        <i class="fa fa-eye"></i> View Task
+      </a>
+    </li>
+    <li class="context-menu__item">
+      <a href="#" class="context-menu__link">
+        <i class="fa fa-edit"></i> Edit Task
+      </a>
+    </li>
+    <li class="context-menu__item">
+      <a href="#" class="context-menu__link">
+        <i class="fa fa-times"></i> Delete Task
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<canvas id="screenShotCanvas" style="height: 100px; width: 100px; background-color: red;  "></canvas>
+
+<!--video id="video" autoplay></video>
+<img id="screenShotImg" src="">
+<canvas id="screenShotCanvas" style="display:none;  "></canvas-->
+
+<!--script>
+  //var video = document.getElementById('video');
+  var video = document.createElement('video');
+  video.setAttribute('autoplay', '');
+//  video.style.width  = "640px";
+//  video.style.height = "480px";
+  document.body.appendChild(video);
+  //var canvas = document.getElementById('screenShotCanvas');
+  var canvas = document.createElement('canvas');
+  canvas.setAttribute('style', 'display:none;');
+//  canvas.style.width  = "640px";
+//  canvas.style.height = "480px";
+  document.body.appendChild(canvas);
+  var ctx = canvas.getContext('2d');
+  var localMediaStream = null;
+  var img = document.createElement('img');
+//  img.style.width  = "640px";
+//  img.style.height = "480px";
+  document.body.appendChild(img);
+
+  function snapshot() {
+    if (localMediaStream) {
+//      canvas.style.width  = video.videoWidth  + "px";
+//      canvas.style.height = video.videoHeight + "px";
+      ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+      // "image/webp" works in Chrome.
+      // Other browsers will fall back to image/png.
+      img.src = canvas.toDataURL('image/png');
+      console.log(canvas.toDataURL('image/png'));
+    }
+  }
+
+  video.addEventListener('click', snapshot, false);
+
+  // Not showing vendor prefixes or code that works cross-browser.
+  navigator.webkitGetUserMedia({audio: false, 
+                                video: {mandatory: {chromeMediaSource: "screen",
+      maxWidth: 640,
+      maxHeight: 360
+                                    } } 
+        }, function(stream) {
+    video.src = window.URL.createObjectURL(stream);
+    localMediaStream = stream;
+  }, e => console.error(e));
+</script-->
+
+<!--script type="text/javascript">
+var video = document.createElement('video');
+video.setAttribute('autoplay', '');
+video.setAttribute('style', 'display: none; position: absolute; top: 0px; left: 0px; ');
+document.body.appendChild(video);
+var canvas = document.createElement('canvas');
+canvas.setAttribute('style', 'display:none;');
+document.body.appendChild(canvas);
+var ctx = canvas.getContext('2d');
+var img = document.createElement('img');
+img.setAttribute('style', 'position: absolute; top: 0px; left: 0px;');
+document.body.appendChild(img);
+
+function snapshot() {
+    ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+    img.src = canvas.toDataURL('image/png');
+}
+video.addEventListener('loadedmetadata', function() {
+    snapshot();
+});
+navigator.webkitGetUserMedia({
+    audio: false,
+    video: {
+        mandatory: {
+            chromeMediaSource: "screen"
+        }
+    }
+}, function(stream) {
+    video.src = window.URL.createObjectURL(stream);
+    video.play();
+}, function(e) {
+    console.error(e);
+});  
+
+</script-->
+
+</body>
+
+</html>

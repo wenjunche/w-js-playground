@@ -1,0 +1,40 @@
+{  
+  "applicationSettings": {
+    "https://manifest1.json": {
+      "permissions": {
+        "System": {
+	          "launchExternalProcess": true,
+	          "Clipboard" : {
+	            "availableFormats": true
+	          }
+          },
+        "Window": {
+          "getNativeId": true
+        }
+      }
+    },
+    "https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/snap.json": {
+      "permissions": {
+        "System": {
+            "getConfig": true,
+	          "launchExternalProcess": true,
+	          "Clipboard" : {
+	            "availableFormats": true
+	          }
+          },
+        "Window": {
+          "getNativeId": true
+        }
+      }
+    },
+    "default": {
+      "permissions": {
+        "System": {
+            "getConfig": false
+          }
+      }
+    }
+  },
+  "whitelist":{  
+  }
+}

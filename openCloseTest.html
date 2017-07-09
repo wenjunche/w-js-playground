@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello OpenFin</title>
+
+    <script type="text/javascript">
+    	var windowCount = 0;
+      	function init() {
+    		fin.desktop.main(function () {
+    			var dw = fin.desktop.Window.wrap(fin.desktop.Application.getCurrent().uuid, 'child1');
+	            dw.addEventListener('closed', function(v){ 
+	            	setTimeout(function() {openChild()}, 1000);
+	            });
+	            dw.addEventListener('shown', function(v){ 
+	            	windowCount += 1;
+	            	document.getElementById("windowCount").innerHTML = "window created: " + windowCount;
+	            	setTimeout(function() {dw.close(true);}, 1000);
+	            });
+
+	            openChild();
+    		});
+      	}
+
+      	function openChild() {
+            for (var cc = 1; cc <= 1; cc++) {
+	            var dw = new fin.desktop.Window({
+	                name: 'child' + cc,
+	                url: "http://test.openf.in/angular/#/default", 
+	                defaultWidth: 500,
+	                defaultHeight: 500,
+	                defaultTop: 100,
+	                defaultLeft: 100,
+	                autoShow: true,
+	                saveWindowState: false,
+	            }, function (v) {
+	            }, function(v) {
+	                    console.error('child window failed', v);                
+	            });
+			}
+      	}
+
+        document.addEventListener('DOMContentLoaded', init);
+
+    </script>
+
+</head>
+
+<body style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+    <div id="container">
+        <div id="windowCount"></div>
+    </div>
+
+</body>
+
+</html>

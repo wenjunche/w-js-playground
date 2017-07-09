@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# 2016-08-18:v4
+
+FALLBACK:
+/ /error.html
+
+# Resources that require the user to be online.
+NETWORK:
+*
+

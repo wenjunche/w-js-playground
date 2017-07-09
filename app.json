@@ -1,0 +1,19 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "Hello OpenFin",
+        "uuid": "OpenFinHelloWorld",
+        "url2": "http://localhost:8081/index.html",
+        "url": "http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/index.html",
+        "applicationIcon": "http://localhost:8081/openfin.ico",
+        "autoShow": true,
+        "defaultHeight": 500,
+        "defaultWidth": 500,
+        "frame": true,
+        "saveWindowState": true
+    },
+    "runtime": {
+        "arguments": "--v=1 --proxy-server=proxy.openfin.co:3128 ",
+        "version": "alpha"
+    }
+}

@@ -1,0 +1,84 @@
+<html>
+<head>
+        <script>
+                var current;
+                var small= {
+                        width: 200,
+                        height: 100,
+                        duration: 4000
+                };
+                var big = {
+                        width: 200,
+                        height: 400,
+                        duration: 4000
+                };
+                current = small;
+                function toggleSize() {
+                        current = current === small ? big : small;
+                        fin.desktop.Window.getCurrent().animate(
+                {
+                    size: current
+                },
+                {
+                    interrupt: true
+                },
+                function(data) {
+                        console.log('done', data);
+                },
+                function(error) {
+                    console.log('error', error);
+                }
+            );
+                }
+                // toggleSize();
+        </script>
+
+        <style type="text/css">
+            .animated-loader {
+                 position: absolute;
+                 top: 50%;
+                 left: 50%;
+                 width: 60px;
+                 height: 60px;
+             }
+
+             .animated-loader-container {
+                  position: inherit
+                  left: -50%;
+                  top: -50%;
+                  width: 100%;
+                  height: 100%;
+              }
+
+             .animated-loader-spinner {
+                  width: inherit;
+                  height: inherit;
+                  animation: rotate infinite 1.2s;
+                  background: transparent url(notification-trumid.svg);
+                  background-size: 100%;
+              }
+
+            @keyframes rotate {
+                0% { transform: scale(1) rotate(0deg); }
+                70% { transform: scale(.5) rotate(270deg); }
+                100% { transform: scale(1) rotate(359deg); }
+             }
+
+              .drag-area * {
+                -webkit-app-region: drag;
+              }
+        </style>
+
+</head>
+<body>
+        <button onClick="toggleSize()">Animate Size</button>
+        <div class="drag-area">
+            <h4>Drag me around!</h4>
+        </div>
+        <div class="animated-loader">
+            <div class="animated-loader-container">
+                <div class="animated-loader-spinner" />
+            </div>
+        </div>
+</body>
+</html>

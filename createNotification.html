@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    #titlebar {
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+        background-color: aqua;
+        padding: 3px;
+        padding-left: 10px;
+    }
+    </style>
+
+    <script type="text/javascript">
+        fin.desktop.main(function(){
+            console.log("createNotification initialized");
+        });
+
+        function newNotification() {
+            var notification = new fin.desktop.Notification({
+                url: 'http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/views/notification.html',
+                message: 'Note from createNotification'
+            });     
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div id="titlebar">
+    </div>
+    <div id="console">
+        <div>
+            <div>
+                <Button id="createNotification" onclick="newNotification()"> Create Notification </Button>
+            </div>
+        </div>
+</body>
+
+</html>

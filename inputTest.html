@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Hello OpenFin</title>
+    <!--script src="js/DockingManager.js" language="JavaScript"></script-->
+
+    <script type="text/javascript">
+      	function init() {
+
+      	}
+
+        function refreshList(prefix) {
+            var list = document.getElementById('selectList');
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+
+    </script>
+
+    <style type="text/css">
+	    .text-box {
+	    	width: 60px;
+	    }
+    </style>
+
+</head>
+
+<body style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+    <div id="container">
+        <div>
+            <form action="redirect.html" autocomplete="on" >
+              <input name="textInput" class="text-box" type="text" aria-label="Select box focus" aria-haspopup=true style="display: block;"></input>
+               <select id="selectList" style="color: Yellow; background:Grey" style="display: block;">
+                                 <option value="volvo">Volvo</option>
+                                 <option value="saab">Saab</option>
+                                 <option value="mercedes">Mercedes</option>
+                                 <option value="ford">Ford</option>
+                                 <option value="chevy">Chevy</option>
+                                 <option value="mazda">Mazda</option>
+                                 <option value="toyota">Toyota</option>
+                                 <option value="nissan">Nissan</option>
+                                 <option value="honda">Honda</option>
+               </select>
+            </form>
+        </div>
+        <a href="#">top top3</a>
+    </div>
+
+</body>
+
+</html>

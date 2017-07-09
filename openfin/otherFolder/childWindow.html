@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="fr">
+    <meta charset="UTF-8">
+    <title>Hello OpenFin CPU Info</title>
+    <script language="javascript" src="js/child.js"></script>
+    <style>
+    html,
+    body {
+        min-height: 100%;
+        margin: 0px;
+        padding: 0px;
+        background-color: gray;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    
+    body22 {
+        padding: 0px;
+        margin: 0px;
+        background-color: azure;
+        border: 2px solid aqua;
+    }
+    
+    .windowContent {
+        padding: 10px;
+        height: 94px;
+    }
+    
+    #titlebar {
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+        background-color: aqua;
+        padding: 3px;
+        padding-left: 10px;
+    }
+    
+    #title {}
+    
+    .closeButton,
+    .minimizeButton {
+        background-color: azure;
+        text-align: center;
+        -webkit-app-region: no-drag;
+        font-family: verdana;
+        font-size: 12px;
+        font-weight: bold;
+        -webkit-user-select: none;
+        padding: 2px;
+        cursor: pointer;
+    }
+    
+    .closeButton:hover,
+    .minimizeButton:hover {
+        background-color: beige,
+        cursor: pointer;
+        color: red;
+    }
+
+    #iframeTitlebar {
+        position: absolute;
+        top: 100px;
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+        background-color: yellow;
+        opacity: 0;
+        width: 100%;
+        height: 15px;
+    }
+    
+    #footer {
+        display: none;
+        position: absolute;
+        bottom: 0px;
+        -webkit-user-select: none;
+        -webkit-app-region: drag;
+        background-color: yellow;
+        width: 100%;
+        height: 15px;        
+    }
+
+    #container {
+
+    }
+
+    </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="titlebar">
+        <table width="100%">
+            <tr>
+                <td width="85%">
+                    <div id="title"> </div>
+                </td>
+                <td>
+                    <div class="minimizeButton" onclick="fin.desktop.Window.getCurrent().minimize()">_</div>
+                </td>
+                <td>
+                    <div class="closeButton" onclick="fin.desktop.Window.getCurrent().close()">X</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="windowContent">
+        <a href="redirect.html">redirect</a>
+        <div id="dimentions"> </div>
+        <button id="undockButton">Undock</button>
+        <button id="minimizeButton">Minimize</button>
+        <input  id="textInput1" name="textInput1" type="text" style="width: 60px" ></input>
+        <input  id="textInput2" name="textInput2" type="text" style="width: 60px" ></input>
+
+        <a href="http://www.awesomium.com/support/" target="_blank">Popup awesomium support</a>
+
+        <div id="iframeTitlebar"></div>
+        <iframe name="test frame 1" src="http://localhost:8081/redirect.html"></iframe>
+    <!--
+        <iframe name="test frame 2" src="http://localhost:8081/redirect.html"></iframe>  
+        <iframe name="test frame 2" src="http://localhost:8081/redirect.html"></iframe>  
+        <iframe name="test frame 2" src="http://test.openf.in/test.html"></iframe>      
+    -->
+
+    </div>
+
+    <div id="footer"></div>
+
+
+    <div>
+       <select id="selectList" style="colorx: Yellow; background-color:red;" >
+                         <option value="volvo">Volvo</option>
+                         <option value="saab" >Saab</option>
+                         <option value="mercedes">Mercedes</option>
+                         <option value="ford">Ford</option>
+                         <option value="chevy">Chevy</option>
+                         <option value="mazda">Mazda</option>
+                         <option value="toyota">Toyota</option>
+                         <option value="nissan">Nissan</option>
+                         <option value="honda">Honda</option>
+       </select>
+    </div>
+
+      <!--div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+        <iframe id='googleframe' src="https://openfin.co"  width="100%" height="100%" frameborder="0"></iframe>
+      </div-->
+  </div>
+</body>
+
+</html>

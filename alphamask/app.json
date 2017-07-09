@@ -1,0 +1,23 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name": "alpha-mask",
+        "description": "alpha-mask",
+        "url": "http://localhost:8081/alphamask/",
+        "uuid": "alpha-mask",
+        "autoShow": true,
+        "frame": false,
+        "defaultWidth": 500,
+        "defaultHeight": 500,
+        "resizable": false,
+        "alphaMask": {
+            "red": 255,
+            "green": 0,
+            "blue": 255
+        }
+    },
+    "runtime": {
+        "arguments": "--v=1 --disable-gpu",
+        "version": "stable"
+    }
+}
