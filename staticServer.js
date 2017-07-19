@@ -1,7 +1,7 @@
 var http = require("http"),
     url = require("url"),
     path = require("path"),
-    fs = require("fs")
+    fs = require("fs"),
     port = process.argv[2] || 8888,
     mimeTypes = {
       "html": "text/html",
@@ -40,12 +40,12 @@ http.createServer(function(request, response) {
 	        return;
 	      }
 	      
-	      var mimeType = mimeTypes[filename.split('.').pop()];
+	      let mimeType = mimeTypes[filename.split('.').pop()];
 	      
 	      if (!mimeType) {
 	        mimeType = 'text/plain';
 	      }
-	      var headers = { 'Content-Type': mimeType };
+	      let headers = { 'Content-Type': mimeType };
 
 		  if (uri === '/index.html') {
 		  	headers['Cache-Control'] = 'private, max-age=46800';
