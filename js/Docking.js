@@ -73,7 +73,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 urlstx: 'https://ems-us1.redi.com/chartiq/stx-redi.html',
                 url3: "http://openfin.github.io/example-fin-hypergrid-behavior-json/",
                 urlker:  "http://win-rmo669h5703.kerberos.openfin.co:8081/hello_delegate.jsp", 
-                url: 'airChrome.html',
+                url: 'childWindow.html',
                 urleik: 'https://amers1.views.cp.reutest.com/web/eikonmessenger',
                 url2: "http://test.openf.in/angular/#/default", 
                 icon1: 'https://trade.proquote.com/icon',
@@ -108,7 +108,7 @@ window.addEventListener("DOMContentLoaded", function() {
                     size: 10,
                     bottomRightCorner: 10
                 },
-                accelerator: {
+                acceleratorxx: {
                         "zoom": true,
                         "devtools":true,
                         "reload":true

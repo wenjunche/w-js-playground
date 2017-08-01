@@ -3,17 +3,31 @@
     "startup_app": {
         "name": "Hello OpenFin",
         "uuid": "OpenFinHelloWorld",
-        "url2": "http://localhost:8081/index.html",
-        "url": "http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/index.html",
+        "url": "http://localhost:8081/index.html",
+        "url2": "http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/index.html",
         "applicationIcon": "http://localhost:8081/openfin.ico",
         "autoShow": true,
         "defaultHeight": 500,
         "defaultWidth": 500,
         "frame": true,
-        "saveWindowState": true
+        "saveWindowState": true,
+        "customRequestHeaders": [ {
+                  "urlList": ["https://openfin.co", "https://*.openfin.co"],
+                  "headers": [
+                    { "app-name" : "OpenFin Runtime"},
+                    { "app-version" : "8.0"}
+                  ]
+                }, {
+                  "urlList": ["https://foxnews.com"],
+                  "headers": [
+                    { "app-platform" : "Fair and Balanced"}
+                  ]
+
+                }
+        ]
     },
     "runtime": {
-        "arguments": "--v=1 --proxy-server=proxy.openfin.co:3128 ",
-        "version": "alpha"
+        "arguments": "--v=1 --proxyxx-server=proxy.openfin.co:3128 --disable-dwm-composition ",
+        "version": "canary"
     }
 }
