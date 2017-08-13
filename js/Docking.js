@@ -121,7 +121,16 @@ window.addEventListener("DOMContentLoaded", function() {
                 backgroundThrottlingxx: false,
                permissions: {
                         "System": { "Clipboard" : { "availableFormats": false } }
-                     }                                        
+                     },
+                "customRequestHeaders": [
+                    {
+                        "urlPatterns": ["http://localhost:8081/*"],
+                        "headers": [
+                            { "ubs-neo-platform" : "launcher-tapedeck"},
+                            { "ubs-neo-native-version" : "1.14.1664.29120"}
+                        ]
+                    },
+                ]
                 //accelerator: {
                 //        zoom: true,
                 //        devtools: true
@@ -203,13 +212,33 @@ window.addEventListener("DOMContentLoaded", function() {
                                         clearChildSubscriptionsOnReload: false,
                                         webSecurity: false,
                                         backgroundColor: "#000000",
-                                        mainWindowOptions: {
-                                            url: 'http://localhost:8081/childWindow.html'
-                                        },
                                        permissions: {
                                                 "System": { "Clipboard" : { "availableFormats": false },
                                                             "getConfig": true }
                                              },
+
+                                        customRequestHeaders: [
+                                            {
+                                                urlList: ["http://localhost:8081/*"],
+                                                headers: [
+                                                    { "ubs-neo-platform" : "launcher-tapedeck"},
+                                                    { "ubs-neo-native-version" : "1.14.1664.29120"}
+                                                ]
+                                            },
+                                            {
+                                                urlList: ["https://openfin.co", "https://*.openfin.co"],
+                                                headers: [
+                                                    { "app-name" : "OpenFin Runtime"},
+                                                    { "app-version" : "8.0"}
+                                                ]
+                                            }, {
+                                                urlList: ["http://*.foxnews.com/*"],
+                                                headers: [
+                                                    { "app-platform" : "Fair and Balanced"}
+                                                ]
+                                            }
+                                        ],
+
                                         customData: {
                                             name: 'OpenFin',
                                             address: '25 Broadway'

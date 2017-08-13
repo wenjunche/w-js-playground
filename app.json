@@ -11,14 +11,27 @@
         "defaultWidth": 500,
         "frame": true,
         "saveWindowState": true,
-        "customRequestHeaders": [ {
-                  "urlList": ["https://openfin.co", "https://*.openfin.co"],
+        "frameXXConnect": "main-window",
+        "contentNavigation": {
+          "whitelist1": [ "https://example.com", "http://www.awesomium.com/", "http://localhost:8081/*"],
+          "blacklist": [ "https://google.com", "http://www.awesomium.com/", "http://localhost:8081/childWindow.html", "http://localhost:8081/redirect.html"]
+        },
+        "customRequestHeaders": [
+                {
+                  "urlPatterns": ["http://localhost:8081/*"],
+                  "headers": [
+                    { "ubs-neo-platform" : "ubs-neo-platform"},
+                    { "ubs-neo-native-version" : "1.14.1664.29120"}
+                  ]
+                },
+                {
+                  "urlPatterns": ["https://openfin.co", "https://*.openfin.co"],
                   "headers": [
                     { "app-name" : "OpenFin Runtime"},
                     { "app-version" : "8.0"}
                   ]
                 }, {
-                  "urlList": ["https://foxnews.com"],
+                  "urlPatterns": ["http://*.foxnews.com/*"],
                   "headers": [
                     { "app-platform" : "Fair and Balanced"}
                   ]
@@ -27,7 +40,18 @@
         ]
     },
     "runtime": {
-        "arguments": "--v=1 --proxyxx-server=proxy.openfin.co:3128 --disable-dwm-composition ",
-        "version": "canary"
-    }
+        "arguments": "--v=1 --no-sandbox --proxyxx-server=proxy.openfin.co:3128  --enable-chromium-renderer-fork ",
+        "version": "8.56.23.12",
+        "version6": "stable-v6"
+    },
+    "appAssets": [
+      {
+        "src": "https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/procexp.zip",
+        "alias": "procexp",
+        "target": "procexp.exe",
+        "version": "1.0.3",
+        "args" : ""
+      }
+    ],
+    "lrsUrl" : "http://localhost:8082/services/"
 }
