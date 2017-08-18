@@ -41,7 +41,8 @@
     },
     "runtime": {
         "arguments": "--v=1 --no-sandbox --proxyxx-server=proxy.openfin.co:3128  --enable-chromium-renderer-fork ",
-        "version": "8.56.23.12",
+        "version8": "8.56.23.12",
+        "version": "stable",
         "version6": "stable-v6"
     },
     "appAssets": [
