@@ -1,4 +1,4 @@
-var http = require("http"),
+const http = require("http"),
     url = require("url"),
     path = require("path"),
     fs = require("fs"),
@@ -28,15 +28,16 @@ http.createServer(function(request, response) {
 	      return;
 	    }
 	 
-	    if (fs.statSync(filename).isDirectory()) 
-	      filename += '/index.html';
+	    if (fs.statSync(filename).isDirectory()) {
+            filename += '/index.html';
+        }
 	 
 	    fs.readFile(filename, "binary", function(err, file) {
 	      if(err) {        
 	        response.writeHead(500, {"Content-Type": "text/plain"});
 	        response.write(err + "\n");
 	        response.end();
-	      console.log("500 " + request.url);
+	        console.log("500 " + request.url);
 	        return;
 	      }
 	      
@@ -48,10 +49,11 @@ http.createServer(function(request, response) {
 	      let headers = { 'Content-Type': mimeType };
 
 		  if (uri === '/index.html') {
-		  	headers['Cache-Control'] = 'private, max-age=46800';
-		  	headers['Expires'] = 'Fri, 24 Mar 2017 09:04:14 GMT';
+//		  	headers['Cache-Control'] = 'private, max-age=46800';
+//		  	headers['Expires'] = 'Fri, 24 Mar 2017 09:04:14 GMT';
 		  	headers['Last-Modified'] =  (new Date()).toUTCString();
-		  	headers['Set-Cookie'] = 'Set-Cookie: Proquote_TRADE_UAT=1798508716.20480.0000;secure; path=/';
+//		  	headers['Set-Cookie'] = 'Proquote_TRADE_UAT=1798508716.20480.0000;secure; path=/';
+		    headers['Set-Cookie'] = 'JSESSIONID=' + (new Date()).toUTCString();
 		  	console.log(JSON.stringify(headers));
 		  }	      
 
