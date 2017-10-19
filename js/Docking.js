@@ -92,7 +92,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 frame: false,
                 resize: true,
                 autoShow: false,
-                saveWindowState: false,
+                saveWindowState: true,
                 showTaskbarIcon: false,
                 opacity: 1,
                 transparent: true,
@@ -119,7 +119,11 @@ window.addEventListener("DOMContentLoaded", function() {
                 frameConnect: 'all',
                 cornerRoundingxx: { width: 33, height: 33 },
                 backgroundThrottlingxx: false,
-               permissions: {
+                preload: "http://localhost:8081/js/preload.js",
+                customData: {
+                    name: 'child window'
+                },
+                permissions: {
                         "System": { "Clipboard" : { "availableFormats": false } }
                      },
                 "customRequestHeaders": [
@@ -130,7 +134,10 @@ window.addEventListener("DOMContentLoaded", function() {
                             { "ubs-neo-native-version" : "1.14.1664.29120"}
                         ]
                     },
-                ]
+                ],
+                contentNavigation: {
+                    "whitelist": [ "https://example.com", "http://www.awesomium.com/", "http://localhost:8081/*"],
+                },
                 //accelerator: {
                 //        zoom: true,
                 //        devtools: true

@@ -48,12 +48,12 @@ http.createServer(function(request, response) {
 	      }
 	      let headers = { 'Content-Type': mimeType };
 
-		  if (uri === '/index.html') {
+		  if (uri === '/empty.html') {
 //		  	headers['Cache-Control'] = 'private, max-age=46800';
 //		  	headers['Expires'] = 'Fri, 24 Mar 2017 09:04:14 GMT';
 		  	headers['Last-Modified'] =  (new Date()).toUTCString();
-//		  	headers['Set-Cookie'] = 'Proquote_TRADE_UAT=1798508716.20480.0000;secure; path=/';
-		    headers['Set-Cookie'] = 'JSESSIONID=' + (new Date()).toUTCString();
+		  	headers['Set-Cookie'] = 'Proquote_TRADE_UAT=1798508716.20480.0000;HttpOnly;path=/';
+//		    headers['Set-Cookie'] = 'JSESSIONID=' + (new Date()).toUTCString() + ";secure; HttpOnly; path=/";
 		  	console.log(JSON.stringify(headers));
 		  }	      
 

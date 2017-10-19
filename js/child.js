@@ -124,3 +124,7 @@ function OnBeforeUnLoad() {
     console.log("onbeforeunload");    
     return "bye bye";
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOMContentLoaded from child window');
+});

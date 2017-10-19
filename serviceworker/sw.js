@@ -8,7 +8,7 @@ this.addEventListener('install', function (event) {
     );
 });
 
-this.addEventListener('fetch', function(event) {
+this.addEventListener('fetchxx', function(event) {
     event.respondWith(caches.match(event.request).catch(function() {
         return fetch(event.request);
     }).then(function(mresponse) {
@@ -29,3 +29,69 @@ this.addEventListener('fetch', function(event) {
         console.error("Mismatch", event.request)
     }));
 });
+
+// A Service Worker which skips cache if the request contains
+// a cookie.
+this.addEventListener('fetch', event => {
+    let request = event.request;
+    if (request.headers.has('Cookie') || request.url.indexOf('TTL.png') > 0) {
+        // Cookie present. Add Cache-Control: no-cache.
+        let newHeaders = new Headers(request.headers);
+        newHeaders.set('Cache-Control', 'no-cache');
+        event.respondWith(fetch(request, {headers: newHeaders}))
+    }
+    // Use default behavior.
+    return
+});
+
+// A Service Worker which replaces {{URL}} with the contents of
+// the URL. (A simplified version of "Edge Side Includes".)
+addEventListener("fetchxx", event => {
+    event.respondWith(fetchAndInclude(event.request))
+});
+async function fetchAndInclude(request) {
+    // Fetch from origin server.
+    let response = await fetch(request)
+
+    // Make sure we only modify text, not images.
+    let type = response.headers.get("Content-Type") || ""
+    if (!type.startsWith("text/")) {
+        // Not text. Don't modify.
+        return response
+    }
+
+    // Read response body.
+    let text = await response.text()
+
+    // Search for instances of {{URL}}.
+    let regexp = /{{([^}]*)}}/g
+    let parts = []
+    let pos = 0
+    let match
+    while (match = regexp.exec(text)) {
+        let url = new URL(match[1], request.url)
+        parts.push({
+            before: text.slice(pos, match.index),
+            // Start asynchronous fetch of this URL.
+            promise: fetch(url.toString())
+                .then((response) => response.text())
+        })
+        pos = regexp.lastIndex
+    }
+
+    // Now that we've started all the subrequests,
+    // wait for each and collect the text.
+    let chunks = []
+    for (let part of parts) {
+        chunks.push(part.before)
+        // Wait for the async fetch from earlier to complete.
+        chunks.push(await part.promise)
+    }
+    chunks.push(text.slice(pos))
+    // Concatenate all text and return.
+    return new Response(chunks.join(""), {
+        status: response.status,
+        statusText: response.statusText,
+        headers: response.headers
+    })
+}

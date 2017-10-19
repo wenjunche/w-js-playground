@@ -1,9 +1,6 @@
 function FindProxyForURL(url, host) {
  
 // If the hostname matches, send direct.
-if (dnsDomainIs(host, "openf.in"))
-    return "DIRECT";
-  
 if (dnsDomainIs(host, "openfin.co"))
     return "DIRECT";
 

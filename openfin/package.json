@@ -1,0 +1,22 @@
+{
+  "name": "openfin",
+  "version": "1.0.0",
+  "description": "node adapter exmaple",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy": "cp a b"
+  },
+  "keywords": [
+    "OpenFin",
+    "Node",
+    "Adapter",
+    "example"
+  ],
+  "author": "W",
+  "license": "MIT",
+  "dependencies": {
+    "hadouken-js-adapter": "0.0.1"
+  }
+}

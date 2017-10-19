@@ -4,24 +4,39 @@
         "name": "Hello OpenFin",
         "uuid": "OpenFinHelloWorld",
         "url": "http://localhost:8081/index.html",
-        "url2": "http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/index.html",
+        "urlHe": "http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/index.html",
         "applicationIcon": "http://localhost:8081/openfin.ico",
+        "showTaskbarIcon": true,
         "autoShow": true,
         "defaultHeight": 500,
         "defaultWidth": 500,
         "frame": true,
+        "plugins": true,
+        "waitForPageLoad": true,
         "saveWindowState": true,
-        "frameXXConnect": "main-window",
-        "contentNavigation": {
+        "frameConnect": "all",
+        "transparent": false,
+        "customData": {
+          "name": "OpenFin",
+          "address": "25 Broadway"
+        },
+      "disablexxIabSecureLogging": true,
+      "contentNavigationxx": {
           "whitelist1": [ "https://example.com", "http://www.awesomium.com/", "http://localhost:8081/*"],
           "blacklist": [ "https://google.com", "http://www.awesomium.com/", "http://localhost:8081/childWindow.html", "http://localhost:8081/redirect.html"]
         },
         "customRequestHeaders": [
                 {
-                  "urlPatterns": ["http://localhost:8081/*"],
+                  "urlPatterns": ["http://localhost:8081/*", "http://*.openf.in/*"],
                   "headers": [
                     { "ubs-neo-platform" : "ubs-neo-platform"},
-                    { "ubs-neo-native-version" : "1.14.1664.29120"}
+                    { "ubs-neo-native-version" : "1.14.1664.29120"},
+                    {
+                      "app-name": "OpenFin Runtime"
+                    },
+                    {
+                      "app-version": "8.0"
+                    }
                   ]
                 },
                 {
@@ -37,22 +52,27 @@
                   ]
 
                 }
-        ]
+        ],
+      "preloadxx" : [
+                        {"url": "http://localhost:8081/js/preload.js"},
+                        {"url": "http://localhost:8081/js/preload2.js"}
+                    ]
     },
     "runtime": {
-        "arguments": "--v=1 --no-sandbox --proxyxx-server=proxy.openfin.co:3128  --enable-chromium-renderer-fork ",
+        "argumentsx": "--v=1 --noxx-sandbox --proxy-server=proxy.openfin.co:3128  --enable-chromium-renderer-fork --disable-init-load  --log-net-log=c:\\AirLogs\\net.log --disable-web-security  --framestrategy=frames ",
+        "arguments": "--v=1 --framestrategy=frames --disable-init-load ",
         "version8": "8.56.23.12",
-        "version": "stable",
-        "version6": "stable-v6"
+        "version": "8.56.26.2",
+        "versionx": "stable"
     },
     "appAssets": [
       {
         "src": "https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/procexp.zip",
         "alias": "procexp",
         "target": "procexp.exe",
-        "version": "1.0.3",
+        "version": "1.0.4",
         "args" : ""
       }
     ],
-    "lrsUrl" : "http://localhost:8082/services/"
+    "lrsUrlxx" : "http://localhost:8082/services/"
 }

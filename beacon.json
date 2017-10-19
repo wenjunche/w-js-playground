@@ -1,0 +1,40 @@
+{
+  "devtools_port": 9090,
+  "startup_app": {
+    "name": "Beacon",
+    "url": "http://perpetualnyc.com/beacon/index.html",
+    "__url": "http://localhost:5000/index.html?debug",
+    "uuid": "beacon",
+    "autoShow": true,
+    "defaultWidth": 1200,
+    "defaultHeight": 700,
+    "saveWindowState": false,
+    "top": 30,
+    "resizable": true,
+    "nonPersistent": true,
+    "icon": "http://perpetualnyc.com/beacon/beacon_icon.ico",
+    "__icon": "http://localhost:5000/favicon.ico",
+    "applicationIcon": "http://perpetualnyc.com/beacon/beacon_icon.ico",
+    "__applicationIcon": "http://localhost:5000/favicon.ico",
+    "taskbarIcon": "http://perpetualnyc.com/beacon/beacon_icon.ico"
+  },
+  "runtime": {
+    "arguments": "--enable-multi-runtime",
+    "version6": "6.49.21.24",
+    "versionX": "community",
+    "version7": "7.53.23.23",
+    "version": "8.56.24.41",
+    "forceLatest": true
+  },
+  "supportInformation": {
+    "company": "Perpetual",
+    "product": "Beacon",
+    "email": "dev@perpetualny.com"
+  },
+  "shortcut": {
+    "company": "Perpetual",
+    "description": "Local_Beacon",
+    "icon": "http://perpetualnyc.com/beacon/beacon_icon.ico",
+    "name": "Local_Beacon"
+  }
+}
