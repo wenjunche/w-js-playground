@@ -2,7 +2,8 @@
   "devtools_port": 9090,
   "startup_app": {
     "name": "Beacon",
-    "url": "http://perpetualnyc.com/beacon/index.html",
+    "url3": "http://perpetualnyc.com/beacon/index.html",
+    "url": "file:///C:/Users/wenjun/Documents/Project/hadouken-core/src/certificate/index.html",
     "__url": "http://localhost:5000/index.html?debug",
     "uuid": "beacon",
     "autoShow": true,

@@ -4,6 +4,7 @@
         "name": "Hello OpenFin",
         "uuid": "OpenFinHelloWorld",
         "url": "http://localhost:8081/index.html",
+        "url2": "file:///C:/Users/wenjun/Documents/Project/hadouken-core/src/certificate/index.html",
         "urlHe": "http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/index.html",
         "applicationIcon": "http://localhost:8081/openfin.ico",
         "showTaskbarIcon": true,

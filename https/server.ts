@@ -11,6 +11,7 @@ const options: https.ServerOptions = {
     cert: fs.readFileSync('server-crt.pem'),
     requestCert: true,
     rejectUnauthorized: true,
+//    ca: [ fs.readFileSync('client-crt.pem') ]
     ca: [ fs.readFileSync('client-crt.pem'), fs.readFileSync('client-crt2.pem') ]
 };
 
