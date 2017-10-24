@@ -10,3 +10,15 @@ client.on('open', function () {
 client.on('message', function (msg) {
     console.log("received: " + msg);
 });
+/*
+    From OpenFin
+
+    const socket = new WebSocket('wss://localhost:8443');
+    socket.addEventListener('open', function (event) {
+        socket.send('Hello Server!');
+    });
+    socket.addEventListener('message', function (event) {
+        console.log('Message from server ', event.data);
+    });
+
+*/ 
