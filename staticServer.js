@@ -15,8 +15,12 @@ const http = require("http"),
  
 http.createServer(function(request, response) {
 
-  if (request.method === 'GET') { 
-	  var uri = url.parse(request.url).pathname, 
+    // SSE
+    if (request.url === '/events' && request.headers.accept && request.headers.accept === 'text/event-stream') {
+        sendSSE(request, response);
+    }
+  else if (request.method === 'GET') {
+	  let uri = url.parse(request.url).pathname,
 	      filename = path.join(process.cwd(), uri);
 	  
 	  fs.exists(filename, function(exists) {
@@ -48,11 +52,15 @@ http.createServer(function(request, response) {
 	      }
 	      let headers = { 'Content-Type': mimeType };
 
-		  if (uri === '/empty.html') {
+		  if (uri === '/index.html') {
 //		  	headers['Cache-Control'] = 'private, max-age=46800';
 //		  	headers['Expires'] = 'Fri, 24 Mar 2017 09:04:14 GMT';
 		  	headers['Last-Modified'] =  (new Date()).toUTCString();
-		  	headers['Set-Cookie'] = 'Proquote_TRADE_UAT=1798508716.20480.0000;HttpOnly;path=/';
+		  	headers['Set-Cookie'] = ['Proquote_TRADE_UAT1=1798508716.20480.0000;expires=Thu, 18 Dec 2020 12:00:00 UTC;path=/',
+				     				 'Proquote_TRADE_UAT2=1798508716.20480.1111;expires=Thu, 18 Dec 2020 12:00:00 UTC;path=/',
+					                 'Proquote_TRADE_UAT3=1798508716.20480.0000;expires=Thu, 18 Dec 2020 12:00:00 UTC;path=/',
+                					 'JSESSIONID=' + (new Date()).toUTCString() + '; HttpOnly; path=/'
+									];
 //		    headers['Set-Cookie'] = 'JSESSIONID=' + (new Date()).toUTCString() + ";secure; HttpOnly; path=/";
 		  	console.log(JSON.stringify(headers));
 		  }	      
@@ -79,5 +87,32 @@ http.createServer(function(request, response) {
   }
 
 }).listen(parseInt(port, 10));
+
+function sendSSE(request, response) {
+
+    // client code
+    // var source = new EventSource('/events');
+    // source.onmessage = function(e) { console.log(e) }
+
+    response.writeHead(200, {
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        'Connection': 'keep-alive'
+    });
+
+    const id = (new Date()).toLocaleTimeString();
+
+    // Sends a SSE every 5 seconds on a single connection.
+    setInterval(function() {
+        constructSSE(response, id, (new Date()).toLocaleTimeString());
+    }, 5000);
+    constructSSE(response, id, (new Date()).toLocaleTimeString());
+}
+
+function constructSSE(res, id, data) {
+    res.write('id: ' + id + '\n');
+    res.write("data: " + data + '\n\n');
+}
+
 
 console.log("Static file server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");
