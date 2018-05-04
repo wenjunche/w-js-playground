@@ -13,15 +13,38 @@
         }
       }
     },
-    "https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/snap.json": {
+    "http://localhost:8081/app.json": {
       "permissions": {
         "System": {
             "getConfig": true,
 	          "launchExternalProcess": true,
 	          "Clipboard" : {
 	            "availableFormats": true
-	          }
+	          },
+            "readRegistryValue": {
+                "enabled": true,
+              "registryKeys": ["HKEY_CURRENT_USER\\Software\\OpenFin\\RVM", "HKEY_CURRENT_USER\\Software\\OpenFin\\Runtime", "HKEY_CURRENT_USER\\Software\\Oracle"]
+            }
           },
+        "Window": {
+          "getNativeId": true
+        }
+      }
+    },
+    "MyPolicies": {
+      "urls": ["https://example.com", "http://localhost:8082/*"],
+      "permissions": {
+        "System": {
+          "getConfig": true,
+          "launchExternalProcess": true,
+          "Clipboard" : {
+            "availableFormats": true
+          },
+          "readRegistryValue": {
+            "enabled": true,
+            "registryKeys": ["HKEY_CURRENT_USER\\Software\\OpenFin\\RVM", "HKEY_CURRENT_USER\\Software\\OpenFin\\Runtime\\Path", "HKEY_CURRENT_USER\\Software\\Oracle"]
+          }
+        },
         "Window": {
           "getNativeId": true
         }

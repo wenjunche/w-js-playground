@@ -4,7 +4,8 @@
   "scripts": {
     "start": "node serverTS.js",
     "client": "node clientTS.js",
-    "clientBabel": "babel-node clientTS.js --presets es2015,stage-2"
+    "clientBabel": "babel-node clientTS.js --presets es2015,stage-2",
+    "build": "webpack --progress --colors"
   },
   "dependencies": {
     "@types/openfin": "^17.0.2",

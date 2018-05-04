@@ -1,0 +1,114 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+        "name2": "Hello OpenFin",
+        "name": "UBSNeo local",
+        "uuid": "OpenFinHelloWorld",
+        "url": "http://localhost:8081/index.html",
+        "urltr": "https://amers1.views.cp.reutest.com/web/eikonmessenger",
+        "urlho": "http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/index.html",
+        "iconxx": "http://localhost:8081/openfin.ico",
+        "iconx": "https://finsemble.chartiq.com/favicon.ico",
+        "taskbarIconGroup": "bigw",
+        "showTaskbarIcon": true,
+        "autoShow": true,
+        "defaultHeight": 500,
+        "defaultWidth": 500,
+        "maxHeight": 600,
+        "frame": true,
+        "resizable": true,
+        "plugins": true,
+        "waitForPageLoad": true,
+        "saveWindowState": true,
+        "frameConnectxx": "all",
+        "transparent": false,
+        "contextMenu": true,
+        "customWindowAlert": true,
+        "experimental": {
+          "api": {
+            "iframe": {
+              "crossOriginInjection": true
+            }
+          },
+          "node": false
+        },
+        "resizeRegion": {
+          "sides": {"bottom": false, "left": false}
+        },
+        "customData": {
+          "name": "OpenFin",
+          "address": "25 Broadway"
+        },
+      "disablexxIabSecureLogging": true,
+      "contentNavigationxx": {
+          "whitelist1": [ "https://example.com", "http://www.awesomium.com/", "http://localhost:8081/*"],
+          "blacklist": [ "https://google.com", "http://www.awesomium.com/", "http://localhost:8081/childWindow.html", "http://localhost:8081/redirect.html"]
+        },
+        "accelerator": { "zoom": true },
+        "customRequestHeaders": [
+                {
+                  "urlPatterns": ["http://localhost:8081/*", "http://*.openf.in/*"],
+                  "headers": [
+                    { "ubs-neo-platform" : "ubs-neo-platform"},
+                    { "ubs-neo-native-version" : "1.14.1664.29120"},
+                    {
+                      "app-name": "OpenFin Runtime"
+                    },
+                    {
+                      "app-version": "8.0"
+                    }
+                  ]
+                },
+                {
+                  "urlPatterns": ["https://openfin.co", "https://*.openfin.co"],
+                  "headers": [
+                    { "app-name" : "OpenFin Runtime"},
+                    { "app-version" : "8.0"}
+                  ]
+                }, {
+                  "urlPatterns": ["http://*.foxnews.com/*"],
+                  "headers": [
+                    { "app-platform" : "Fair and Balanced"}
+                  ]
+
+                }
+        ],
+      "preloadxx" : [
+                        {"url": "http://localhost:8081/js/preload.js"},
+                        {"url": "http://localhost:8081/js/preload2.js"}
+                    ],
+      "permissionsxx": {
+        "System": {
+          "getConfig": true,
+          "launchExternalProcess": true,
+          "Clipboard" : {
+            "availableFormats": true
+          },
+          "readRegistryValue": {
+            "enabled": true,
+            "registryKeys": ["HKEY_CURRENT_USER\\Software\\OpenFin\\RVM", "HKEY_CURRENT_USER\\Software\\OpenFin\\Runtime\\Path", "HKEY_CURRENT_USER\\Software\\Oracle"]
+          }
+        },
+        "Window": {
+          "getNativeId": true
+        }
+      },
+      "enableAppLogging": true
+    },
+    "runtime": {
+        "argumentsx": "--v=1 --noxx-sandbox --proxy-server=proxy.openfin.co:3128 --enable-mesh --enable-strict-api-permissionsxx --enable-chromium-renderer-fork --disable-init-load  --log-net-log=c:\\AirLogs\\net.log --disable-web-security  --framestrategy=frames --proxyx-pac-url=http://localhost:8081/proxy.pac  --trace-startup  --trace-startup-file=c:\\AirLogs\\trace.json --trace-startup-duration=30 --utility-startup-dialog  --max-connections-per-proxy=128 --enable-precise-memory-info  --js-flags=\"--expose_gc\" ",
+        "arguments": "--v=1 --framestrategy=frames --disaxxble-init-reload --winhttp-proxy-resolver --max-connections-per-proxy=128 --disablex-window-group-tracking=api,resize --log-net-log=c:\\AirLogs\\net.json  --no-sandxxcbox --securitxy-realm=test  ",
+        "version": "canary",
+        "version9": "9.61.30.1"
+    },
+    "appAssets": [
+      {
+        "src": "https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/procexp.zip",
+        "alias": "procexp",
+        "target": "procexp.exe",
+        "version": "1.0.4"
+      }
+    ],
+    "lrsUrl" : "http://localhost:8080/openfin/lrs",
+    "licenseKey": "OpenFinTest"
+}

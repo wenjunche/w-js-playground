@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <title>Hello OpenFin</title>
     <!--build:js js/main.min.js -->
-    <!--script src="js/DockingManager.js" language="JavaScript"></script-->
+    <script src="js/DockingManager.js" language="JavaScript"></script>
     <script src="js/Docking.js" language="JavaScript"></script>
     <!--script src="http://test.openf.in/test/test.js" language="JavaScript"></script-->
     <!-- endbuild -->
-
+    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">-->
+    <!--<link href="css/test.css" type="text/css" rel="stylesheet">-->
     <script type="text/javascript">
         window.addEventListener("load", function load(event){
                 console.log('loaded event');
@@ -76,13 +77,41 @@
         }
 
         document.addEventListener('DOMContentLoaded', init);
-
     </script>
 
+    <style>
+        @font-face {
+            font-family: 'Awesome-Font';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://trading.tullettprebon.com/matchbox-identity/assets/fonts/droidsans-bold.woff) format('woff');
+        }
+        @font-face {
+            font-family: 'Glyphicons Halflings';
+            src: url(https://trading.tullettprebon.com/matchbox-identity/assets/bootstrap-3.1.1/fonts/glyphicons-halflings-regular.woff) format('woff');
+        }
 
+        .glyphicon {
+            position: relative;
+            top: 1px;
+            display: inline-block;
+            font-family: 'Glyphicons Halflings';
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .glyphicon-asterisk:before {
+            content: "\002a";
+        }
+    </style>
 </head>
 
 <body style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+    <!--<p style="font-family: 'Awesome-Font', Arial">Awesome-Font test</p>-->
+    <!--<span class="glyphicon glyphicon-asterisk"></span>-->
 
     <div id="console">
         <a name="top"></a>
@@ -100,7 +129,8 @@
                 <Button id="Restore"> Restore </Button>
                 <Button id="Devtools"> DevTools </Button>
                 <Button id="Speak"> Speak </Button>
-                <form action="redirect.html" autocomplete="on" >
+                <!--<form action="redirect.html" autocomplete="on" >-->
+                <form action="empty.html" target="my-iframe">
                   <input  id="textInput" name="textInput" type="email" style="width: 60px" autocomplete="on" ></input>
                   <button type="submit">submit</button>
                 </form>
@@ -163,11 +193,12 @@
      <a href="file:///C:/Users/richard/Downloads/tullet-docking-demo/static/index.html" target="_blank">Local File</a>
     </div>
     <div>    
-     <a href="https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/test.csv" download='c://test.csv'>Download File</a>
+     <a href="https://cdn.openfin.co/release/runtime/8.56.26.50" download='c://test.csv'>Download File</a>
     </div>
     <div id="customContextMenu">Custom Context Menu</div>
     <a href="#top">top top</a>
-    <a href="fins://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/snap.json">snap</a>
+    <a href="fins://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/app.json">snap</a>
+    <a href="fin://localhost:8081/app.json?$$a=1&$$b=2">DeepLinking</a>
       <!--object id="embedPdf" width="500" height="500" alt="pdf" type="application/pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" title="HelloWorld">
       </object-->
 
@@ -176,10 +207,10 @@
       <!--iframe  width="420" height="315" src="https://httpbin.org/basic-auth/user/passwd"></iframe-->
 
       <!--img src="https://httpbin.org/basic-auth/user/passwd"/-->
-      <iframe id="iframe1" width="100" height="100" src="http://localhost:8081/empty.html" frameborder="0"></iframe>
-        <iframe id="iframe2" width="100" height="100" src="http://localhost:8081/empty.html" frameborder="0"></iframe>
-        <iframe id="iframe3" width="100" height="100" src="http://localhost:8081/empty.html" frameborder="0"></iframe>
-        <iframe id="iframe4" width="100" height="100" src="http://localhost:8081/empty.html" frameborder="0"></iframe>
+      <!--<iframe id="iframe1" width="100" height="100" src="http://www.foxnews.com/index.html" frameborder="0"></iframe>-->
+        <!--<iframe id="iframe2" width="100" height="100" src="http://localhost:8081/childWindow.html" frameborder="0"></iframe>-->
+        <!--<iframe id="iframe3" width="100" height="100" src="http://localhost:8081/empty.html" frameborder="0"></iframe>-->
+        <iframe id="iframe4" name="my-iframe" width="100" height="100" src="empty.html" frameborder="0"></iframe>
 
   <svg height="100" width="100">
     <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
@@ -213,6 +244,11 @@
 </nav>
 
 <canvas id="screenShotCanvas" style="height: 100px; width: 100px; background-color: red;  "></canvas>
+
+<!--<audio controls>-->
+    <!--<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">-->
+    <!--Your browser does not support the audio element.-->
+<!--</audio>-->
 
 <!--video id="video" autoplay></video>
 <img id="screenShotImg" src="">

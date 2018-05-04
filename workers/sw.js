@@ -8,7 +8,7 @@ this.addEventListener('install', function (event) {
     );
 });
 
-this.addEventListener('fetchxx', function(event) {
+this.addEventListener('fetch', function(event) {
     event.respondWith(caches.match(event.request).catch(function() {
         return fetch(event.request);
     }).then(function(mresponse) {
@@ -38,6 +38,7 @@ this.addEventListener('fetch', event => {
         // Cookie present. Add Cache-Control: no-cache.
         let newHeaders = new Headers(request.headers);
         newHeaders.set('Cache-Control', 'no-cache');
+        console.log('sw.js adding cache control', event.request.url);
         event.respondWith(fetch(request, {headers: newHeaders}))
     }
     // Use default behavior.

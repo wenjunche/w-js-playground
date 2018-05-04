@@ -31,11 +31,5 @@
     "company": "Perpetual",
     "product": "Beacon",
     "email": "dev@perpetualny.com"
-  },
-  "shortcut": {
-    "company": "Perpetual",
-    "description": "Local_Beacon",
-    "icon": "http://perpetualnyc.com/beacon/beacon_icon.ico",
-    "name": "Local_Beacon"
   }
 }

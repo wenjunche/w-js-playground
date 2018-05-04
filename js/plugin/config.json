@@ -1,0 +1,9 @@
+{
+    "name": "left-pad",
+    "version": "2.0.0",
+    "description": "Left pads a string",
+    "author": "Pat",
+    "type": "module",
+    "runtime-min": "3.2.4",
+    "target": "main.js"
+}

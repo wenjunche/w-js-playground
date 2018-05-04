@@ -10,6 +10,8 @@ var fin = fin || {};
 if (fin && fin.desktop) {
     fin.desktop.main(function(){
 
+        document.getElementById("childName").innerText = fin.desktop.Window.getCurrent().name;
+
         fin.desktop.InterApplicationBus.subscribe("*", "translate-symbol-response", d => console.log(d));
 
         // setInterval(updateDimentions, 100);
@@ -21,6 +23,11 @@ if (fin && fin.desktop) {
 
         fin.desktop.InterApplicationBus.subscribe("*", "window-docked", onDock);
         fin.desktop.InterApplicationBus.subscribe("*", "window-undocked", onUnDock);
+
+        fin.desktop.InterApplicationBus.publish('window-load', {
+            windowName: window.name
+        });
+
 
 //        fin.desktop.Window.getCurrent().addEventListener("bounds-changed", function(event) {
 //            console.log(event);
@@ -98,12 +105,7 @@ function onUnDock(message){
 }
 
 function undock(){
-
-    fin.desktop.InterApplicationBus.publish("undock-window", {
-
-        windowName: window.name
-    });
-
+    fin.desktop.Window.getCurrent().leaveGroup();
 }
 
 function enableUndock(value){

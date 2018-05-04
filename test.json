@@ -1,0 +1,62 @@
+{
+  "devtools_port": 9090,
+  "assetsUrl": "https://neo-qa2.ubstest.com/static/launcher/3.0/runtime",
+  "dialogSettings": {
+    "logo": "https://neo-qa2.ubstest.com/static/launcher/3.0/assets/neo-logo-runtime-progress.png",
+    "bgColor": 4294967295,
+    "textColor": 4280032284,
+    "progressBarBgColor": 4294309365,
+    "progressBarFillColor": 4284769637,
+    "progressBarBorderColor": 4294967295
+  },
+  "startup_app": {
+    "uuid": "neo-openfin-launcher",
+    "url": "https://neo-qa2.ubstest.com/static/launcher/3.0/hub/index.html",
+    "plugins": true,
+
+    "mainWindowOptions": {
+      "autoShow": true,
+      "contextMenu": true,
+      "frame": false,
+      "shadow": true,
+      "defaultWidth": 150,
+      "defaultHeight": 150,
+      "maxWidth": 150,
+      "maxHeight": 150,
+      "preload": "https://neo-qa2.ubstest.com/static/launcher/3.0/neo-openfin-core.js",
+      "taskbarIcon": "https://neo-qa2.ubstest.com/static/launcher/3.0/assets/neo128.ico",
+      "taskbarIconGroup": "ubsneo-qa2-external",
+      "waitForPageToLoad": false
+    }
+  },
+  "appAssets": [
+    {
+      "version": "1.0.1",
+      "src": "https://neo-qa2.ubstest.com/static/launcher/3.0/assets/NeoAirApp.zip",
+      "alias": "NeoAir",
+      "target": "UBSNeo.exe",
+      "args": "-launcher3 -openfinManifestUrl=http://localhost:8081/test.json -targetURL=https://neo-qa2.ubstest.com/static/F35.html",
+      "argsxx": "-launcher3 -openfinManifestUrl=https://neo-qa2.ubstest.com/static/launcher/3.0/manifest.json -targetURL=https://neo-qa2.ubstest.com/static/F35.html"
+    }
+  ],
+  "runtime": {
+    "arguments": "--v=1 --framestrategy=frames --security-realm=ubsneo-qa2-external --max-connections-per-proxy=128",
+    "version": "8.56.27.64"
+  },
+  "shortcut": {},
+  "appData": {
+    "air": {
+      "uuid": "neo-air-launcher"
+    },
+    "window": {
+      "windowUrl": "https://neo-qa2.ubstest.com/static/launcher/3.0/hub/window.html",
+      "menuUrl": "https://neo-qa2.ubstest.com/static/launcher/3.0/hub/menu.html",
+      "errorUrl": "https://neo-qa2.ubstest.com/static/launcher/3.0/hub/error.html"
+    },
+    "neoUrl": "https://neo-qa2.ubstest.com",
+    "logLevel": {
+      "openfin": "info",
+      "air": "info"
+    }
+  }
+}

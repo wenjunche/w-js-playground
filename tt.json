@@ -1,0 +1,55 @@
+{
+  "devtools_port": 9090,
+  "dialogSettings": {
+    "bgColor": 4294967295,
+    "logo": "https://trade.tt/static/images/TTD-RVM-download.png?t=69387ab3",
+    "progressBarBgColor": 4293980400,
+    "progressBarBorderColor": 4278190080,
+    "progressBarFillColor": 4278228695,
+    "textColor": 4278190080
+  },
+  "env": "3.0.0",
+  "licenseKey": "86346de6-7b77-4a25-99d4-d73b207ef1bf",
+  "runtime": {
+    "arguments": "--enable-aggressive-domstorage-flushing --disable-legacy-window --noerrdialogs --no-sandbox --remote-debugging-port=9090 --enable-crash-reporting --v=1 --disable-gpu",
+    "futureVersion": "8.56.26.50",
+    "version": "8.56.26.50"
+  },
+  "shortcut": {
+    "company": "TT",
+    "description": "TT Desktop",
+    "icon": "https://trade.tt/static/images/favicon.ico?t=69387ab3",
+    "name": "Trading Technologies"
+  },
+  "splashScreenImage": "https://trade.tt/static/images/TTD-splash.png?t=69387ab3",
+  "startup_app": {
+    "alwaysOnTop": true,
+    "applicationIcon": "https://trade.tt/static/images/favicon.ico?t=69387ab3",
+    "autoShow": true,
+    "contextMenu": true,
+    "defaultCentered": true,
+    "defaultHeight": 120,
+    "defaultLeft": 0,
+    "defaultTop": 0,
+    "defaultWidth": 390,
+    "delay_connection": true,
+    "frame": false,
+    "name": "trade.tt",
+    "resizable": false,
+    "resize": false,
+    "saveWindowState": false,
+    "showTaskbarIcon": false,
+    "url": "https://trade.tt/desktop/startup?cache_buster=69387ab3",
+    "uuid": "trade.tt-.startup",
+    "windowState": "normal"
+  },
+  "supportInformation": {
+    "company": "Trading Technologies",
+    "email": "debesys-crash-notification@tradingtechnologies.com",
+    "forwardErrorReports": true,
+    "product": "TT Desktop"
+  },
+  "ttw": {
+    "requestUrl": "http://trade.tt/desktop/config"
+  }
+}

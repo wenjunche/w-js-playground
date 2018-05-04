@@ -1,0 +1,26 @@
+{
+  "name": "https-server",
+  "version": "1.0.0",
+  "dependencies": {
+    "async-limiter": {
+      "version": "1.0.0",
+      "from": "async-limiter@>=1.0.0 <1.1.0",
+      "resolved": "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.0.tgz"
+    },
+    "safe-buffer": {
+      "version": "5.1.1",
+      "from": "safe-buffer@>=5.1.0 <5.2.0",
+      "resolved": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.1.tgz"
+    },
+    "ultron": {
+      "version": "1.1.0",
+      "from": "ultron@>=1.1.0 <1.2.0",
+      "resolved": "https://registry.npmjs.org/ultron/-/ultron-1.1.0.tgz"
+    },
+    "ws": {
+      "version": "3.2.0",
+      "from": "ws@latest",
+      "resolved": "https://registry.npmjs.org/ws/-/ws-3.2.0.tgz"
+    }
+  }
+}
