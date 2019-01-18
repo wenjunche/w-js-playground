@@ -1,4 +1,5 @@
 const http = require("http"),
+  https = require("https"),
   url = require("url"),
   path = require("path"),
   fs = require("fs"),
@@ -14,8 +15,7 @@ const http = require("http"),
     pac2: "application/x-pac"
   };
 
-http
-  .createServer(function(request, response) {
+function serviceReq(request, response) {
     // SSE
     if (
       request.url === "/events" &&
@@ -90,8 +90,17 @@ http
         response.end("post received");
       });
     }
-  })
+  }
+
+http
+  .createServer(serviceReq)
   .listen(parseInt(port, 10));
+
+const key  = fs.readFileSync('bigw.key', 'ascii');
+const cert = fs.readFileSync('bigw.cert', 'ascii');
+https
+  .createServer({key: key, cert: cert}, serviceReq)
+  .listen(parseInt(port, 10) + 1);
 
 function sendSSE(request, response) {
   // client code
