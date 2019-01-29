@@ -88,7 +88,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
         var dws = [];
         console.time("creating window");
-        for (let cc = 0; cc < 3; cc++) {
+        for (let cc = 0; cc < 1; cc++) {
           let cname = "child0" + cc;
           let dw = new fin.desktop.Window(
             {
@@ -98,7 +98,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 "http://openfin.github.io/example-fin-hypergrid-behavior-json/",
               urlker:
                 "http://win-rmo669h5703.kerberos.openfin.co:8081/hello_delegate.jsp",
-              url: "http://localhost:8081/childWindow.html",
+              url: "http://localhost:8081/index.html",
                 icon: "http://localhost:8081/openfin.ico",
               urleik: "https://amers1.views.cp.reutest.com/web/eikonmessenger",
               url2: "http://test.openf.in/angular/#/default",
@@ -116,7 +116,7 @@ window.addEventListener("DOMContentLoaded", function() {
               maxHeightx: 300,
               defaultTop: 100 + (cc * 10),
               defaultLeft: 100 + (cc * 10),
-              frame: false,
+              frame: true,
               resize: true,
               autoShow: true,
               saveWindowStatex: false,
@@ -146,7 +146,7 @@ window.addEventListener("DOMContentLoaded", function() {
               backgroundColorXX: "#000000",
               frameConnect: "all",
               cornerRoundingxx: { width: 33, height: 33 },
-              backgroundThrottlingxx: false,
+              backgroundThrottling: true,
               preloadxx: "http://localhost:8081/js/preload.js",
               experimental: {
                 node: false
@@ -234,8 +234,8 @@ window.addEventListener("DOMContentLoaded", function() {
             name: "FX Derivatives",
             uuid: "BGC Trader", // + appCounter++,
             urlciq: "https://ems-us1.redi.com/chartiq/stx-redi.html",
-            urlxx: "https://demoportal.bgctrader.com/",
-            url: "http://localhost:8081/index.html",
+            url: "https://openfin.co/",
+            urllo: "http://localhost:8081/index.html",
             urliq: "http://openfin.chartiq.com/0.5/index.html",
             urlHello: "http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/index.html",
             url2: "http://localhost:8080/childWindow.html/#/default",

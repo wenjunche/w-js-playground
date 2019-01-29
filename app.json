@@ -4,7 +4,9 @@
         "name2": "Hello OpenFin",
         "name": "UBSNeo local",
         "uuid": "OpenFinHelloWorld",
-        "url": "http://localhost:8081/index.html",
+        "url": "http://localhost:8081/empty.html",
+        "urlrtc": "https://webrtc.github.io/samples/",
+        "urlgpu": "http://www.kevs3d.co.uk/dev/shaders/knot.html",
         "urlhttps": "https://localhost:8443/index.html",
         "urltr": "https://amers1.views.cp.reutest.com/web/eikonmessenger",
         "urlho": "http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/index.html",
@@ -15,7 +17,7 @@
         "autoShow": true,
         "defaultHeight": 500,
         "defaultWidth": 500,
-        "maxHeight": 600,
+        "maxHeightx": 600,
         "frame": true,
         "resizable": true,
         "plugins": true,
@@ -24,7 +26,10 @@
         "frameConnectxx": "all",
         "transparent": false,
         "contextMenu": true,
+        "shadow": false,
         "customWindowAlert": true,
+        "backgroundThrottling": false,
+        "backgroundColor": "red",
         "spellCheck": true,
         "experimental": {
           "api": {
@@ -32,9 +37,10 @@
               "crossOriginInjection": true
             }
           },
+          "v2Apix": true,
           "node": false
         },
-        "resizeRegion": {
+        "resizeRegionx": {
           "sides": {"bottom": false, "left": false}
         },
         "customData": {
@@ -75,7 +81,7 @@
 
                 }
         ],
-      "preload" : [
+      "preloadxx" : [
                         {"url": "http://localhost:8081/js/preload.js"},
                         {"url": "http://localhost:8081/js/preload2.js"}
                     ],
@@ -95,13 +101,14 @@
           "getNativeId": true
         }
       },
-      "enableAppLogging": true
+      "enableAppLogging": true,
+      "webSecurityx": false
     },
     "runtime": {
-        "argumentsx": "--v=1 --noxx-sandbox --proxy-server=proxy.openfin.co:3128 --enable-mesh --enable-strict-api-permissionsxx --enable-chromium-renderer-fork --disable-init-load  --log-net-log=c:\\AirLogs\\net.log --disable-web-security  --framestrategy=frames --proxyx-pac-url=http://localhost:8081/proxy.pac  --trace-startup  --trace-startup-file=c:\\AirLogs\\trace.json --trace-startup-duration=30 --utility-startup-dialog  --max-connections-per-proxy=128 --enable-precise-memory-info  --js-flags=\"--max-old-space-size=200\" ",
-        "arguments": "--v=1 --framestrategy=frames --disaxxble-init-reload --winhttpxx-proxy-resolver --max-connections-per-proxy=128 --disablex-window-group-tracking=api,resize --log-net-log=c:\\AirLogs\\net.json  --no-sandxxcbox --enable-precise-memory-info  --enable-chromium-renderer-fork --ignore-certificate-errors --renderer-process-limit=15 ",
-        "version8": "8.56.30.43",
-        "version": "8.56.30.51"
+        "argumentsx": "--v=1 --noxx-sandbox --proxy-server=proxy.openfin.co:3128 --enable-mesh --enable-strict-api-permissionsxx --enable-chromium-renderer-fork --disable-init-load  --log-net-log=c:\\AirLogs\\net.log --disable-web-security --max-connections-per-proxy=128 --log-net-log=c:\\AirLogs\\net.json  --framestrategy=frames --proxyx-pac-url=http://localhost:8081/proxy.pac  --trace-startup  --trace-startup-file=c:\\AirLogs\\trace.json --trace-startup-duration=36000 --trace-to-console --utility-startup-dialog  --max-connections-per-proxy=128 --enable-precise-memory-info  --js-flags=\"--max-old-space-size=200\" --ignorexx-certificate-errors --renderer-process-limit=15 ",
+        "arguments": "--disable-background-timer-throttling --noerrdialogs --v=99 --framestrategy=frames --disable-init-reload --winhttpxx-proxy-resolver  --disablex-window-group-tracking=api,resize  --enable-precise-memory-info  --enable-chromium-renderer-fork --force-device-scale-factor=1 --enablexx-strict-api-permissions --trace-startup  --trace-startup-file=c:\\debug\\trace.json --trace-startup-duration=36000 ",
+        "version": "8.56.30.75",
+        "version9": "stable"
     },
     "appAssets": [
       {
