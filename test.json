@@ -1,33 +1,35 @@
 {
-  "licenseKey": "101902e5-663b-4139-b2b2-e6fc38f02129",
+  "devtools_port": 9090,
+  "lrsUrl" : "https://lrs-prem.openfin.co",
+  "splashScreenImage": "https://raw.githubusercontent.com/AdaptiveConsulting/ReactiveTraderCloud/master/src/client/public/static/media/splash-screen.jpg",
   "startup_app": {
-    "name": "Trumid Market Center (release)",
-    "description": "The trading platform for Trumid",
-    "url": "https://production.trumid.com/content/trading/",
-    "uuid": "Trumid_trading_release",
-    "autoShow": true,
-    "contextMenu": false,
-    "defaultHeight": 550,
-    "defaultWidth": 600,
-    "enableAppLogging": true,
-    "maxWidth": 600,
-    "minHeight": 500,
-    "minWidth": 600,
-    "maximizable": false,
-    "icon": "https://production.trumid.com/content/trading/trumid_icon.png"
+      "name": "Reactive Trader Cloud",
+      "url": "https://web-demo.adaptivecluster.com",
+      "uuid": "reactive-trader-cloud-web-demo",
+      "applicationIcon": "https://raw.githubusercontent.com/AdaptiveConsulting/ReactiveTraderCloud/master/src/client/public/static/media/adaptive-mark-large.png",
+      "enableAppLogging": true,
+      "logManagement": {
+        "enabled": true
+      },
+      "autoShow": true,
+      "defaultWidth": 1280,
+      "defaultHeight": 900,
+      "minWidth": 800,
+      "minHeight": 600,
+      "resizable": true,
+      "maximizable": true,
+      "frame": false,
+      "spellCheck": true
   },
+  "licenseKey": "64605fac-add3-48a0-8710-64b38e96a2dd",
+  "services1": [ {"name": "layouts"} ],
   "runtime": {
-    "arguments": "--v=1 --safe-errors --security-realm=Trumid_trading --winhttp-proxy-resolver --enable-mesh --enable-crash-reporting",
-    "fallbackVersion": "8.56.27.75",
-    "forceLatest": true,
-    "version": "8.56.30.55"
-  },
-  "supportInformation": {
-    "company": "Trumid",
-    "product": "Trumid Market Center",
-    "email": "clientservice@trumid.com",
-    "forwardErrorReports": true
-  },
-  "enable-fast-forward": false,
-  "environment": ""
+      "arguments": "--force-device-scale-factor=1 --v=1 --disable-init-reload --no-sandbox --enable-crash-reporting",
+      "version8": "8.56.29.59",
+      "version7": "7.53.23.23",
+      "version8": "8.56.30.75",
+      "version9": "9.61.37.46",
+      "version": "10.66.39.25",
+      "futureVersion": "9.61.32.33"
+  }
 }

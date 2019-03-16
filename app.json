@@ -1,10 +1,9 @@
 {
-    "devtools_port": 9090,
+    "devtoolxs_port": 9090,
     "startup_app": {
-        "name2": "Hello OpenFin",
-        "name": "UBSNeo local",
-        "uuid": "OpenFinHelloWorld",
-        "url": "http://localhost:8081/empty.html",
+        "name": "BigW",
+        "uuid": "BigW",
+        "url": "http://localhost:8081/index.html",
         "urlrtc": "https://webrtc.github.io/samples/",
         "urlgpu": "http://www.kevs3d.co.uk/dev/shaders/knot.html",
         "urlhttps": "https://localhost:8443/index.html",
@@ -25,16 +24,21 @@
         "saveWindowState": true,
         "frameConnectxx": "all",
         "transparent": false,
-        "contextMenu": true,
+        "contextMenuxx": true,
+        "contextMenuSettings": {
+          "enable": true,
+          "devtools": true,
+          "reload": true
+        },
         "shadow": false,
         "customWindowAlert": true,
-        "backgroundThrottling": false,
+        "backgroundThrottling": true,
         "backgroundColor": "red",
         "spellCheck": true,
         "experimental": {
           "api": {
             "iframe": {
-              "crossOriginInjection": true
+              "crossOriginInjection": false
             }
           },
           "v2Apix": true,
@@ -49,8 +53,8 @@
         },
       "disablexxIabSecureLogging": true,
       "contentNavigationxx": {
-          "whitelist1": [ "https://example.com", "http://www.awesomium.com/", "http://localhost:8081/*"],
-          "blacklist": [ "https://google.com", "http://www.awesomium.com/", "http://localhost:8081/childWindow.html", "http://localhost:8081/redirect.html"]
+          "whitelist": [ "https://example.com", "http://www.awesomium.com/", "http://localhostxx:8081/*"],
+          "blacklistx": [ "https://google.com", "http://www.awesomium.com/", "http://localhost:8081/childWindow.html", "http://localhost:8081/redirect.html"]
         },
         "accelerator": { "zoom": true },
         "customRequestHeaders": [
@@ -81,7 +85,7 @@
 
                 }
         ],
-      "preloadxx" : [
+      "preloadx" : [
                         {"url": "http://localhost:8081/js/preload.js"},
                         {"url": "http://localhost:8081/js/preload2.js"}
                     ],
@@ -101,16 +105,26 @@
           "getNativeId": true
         }
       },
-      "enableAppLogging": true,
+      "enableAppLoggingxx": true,
       "webSecurityx": false
     },
     "runtime": {
-        "argumentsx": "--v=1 --noxx-sandbox --proxy-server=proxy.openfin.co:3128 --enable-mesh --enable-strict-api-permissionsxx --enable-chromium-renderer-fork --disable-init-load  --log-net-log=c:\\AirLogs\\net.log --disable-web-security --max-connections-per-proxy=128 --log-net-log=c:\\AirLogs\\net.json  --framestrategy=frames --proxyx-pac-url=http://localhost:8081/proxy.pac  --trace-startup  --trace-startup-file=c:\\AirLogs\\trace.json --trace-startup-duration=36000 --trace-to-console --utility-startup-dialog  --max-connections-per-proxy=128 --enable-precise-memory-info  --js-flags=\"--max-old-space-size=200\" --ignorexx-certificate-errors --renderer-process-limit=15 ",
-        "arguments": "--disable-background-timer-throttling --noerrdialogs --v=99 --framestrategy=frames --disable-init-reload --winhttpxx-proxy-resolver  --disablex-window-group-tracking=api,resize  --enable-precise-memory-info  --enable-chromium-renderer-fork --force-device-scale-factor=1 --enablexx-strict-api-permissions --trace-startup  --trace-startup-file=c:\\debug\\trace.json --trace-startup-duration=36000 ",
-        "version": "8.56.30.75",
-        "version9": "stable"
+        "argumentsx": "--v=1 --noxx-sandbox --proxy-server=proxy.openfin.co:3128 --winhttp-proxy-resolver --framestrategy=frames --disable-init-reload --enable-mesh --enable-strict-api-permissionsxx --enable-chromium-renderer-fork --disable-init-load  --disable-web-security --max-connections-per-proxy=128 --log-net-log=c:\\debug\\net.json --enable-chromium-renderer-fork  --framestrategy=frames --proxyx-pac-url=http://localhost:8081/proxy.pac  --trace-startup  --trace-startup-file=c:\\AirLogs\\trace.json --trace-startup-duration=36000 --trace-to-console --utility-startup-dialog  --max-connections-per-proxy=128 --enable-precise-memory-info  --js-flags=\"--max-old-space-size=200\" --ignorexx-certificate-errors --renderer-process-limit=15 ",
+        "arguments": "--disablexx-background-timer-throttling --enable-aggressive-domstorage-flushing --disable-web-security --unsafely-treat-insecure-origin-as-secure=ws://gk.openfin.co:8800 --ignore-certificate-errors --disable-background-timer-throttling --xnoerrdialogs --v=99 --disablex-window-group-tracking=api,resize  --enable-precise-memory-info --disable-gpu-compositing --force-device-scale-factor=1 --enablexx-strict-api-permissions --inspect ",
+        "version8": "8.56.30.75",
+        "versionNGP": "10.66.39.27",
+        "version": "9.61.36.36"
     },
-    "appAssets": [
+    "servicesxx": [{
+      "name": "layouts",
+      "config": {
+        "features": {
+          "tab": false,
+          "dock": true
+        }
+      }
+    }],
+   "appAssetsx": [
       {
         "src": "https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/procexp.zip",
         "alias": "procexp",

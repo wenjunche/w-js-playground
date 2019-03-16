@@ -96,12 +96,10 @@ window.addEventListener("DOMContentLoaded", function() {
               urlstx: "https://ems-us1.redi.com/chartiq/stx-redi.html",
               url3:
                 "http://openfin.github.io/example-fin-hypergrid-behavior-json/",
-              urlker:
-                "http://win-rmo669h5703.kerberos.openfin.co:8081/hello_delegate.jsp",
-              url: "http://localhost:8081/index.html",
+              url: "https://example.com",
+              url5: "http://localhost:8081/childWindow.html",
                 icon: "http://localhost:8081/openfin.ico",
               urleik: "https://amers1.views.cp.reutest.com/web/eikonmessenger",
-              url2: "http://test.openf.in/angular/#/default",
               icon1: "https://trade.proquote.com/icon",
               icon2: "https://uat-trade.proquote.com/iress-icon",
               taskbarIconRedi: "http://localhost:8081/Redi.ico",
@@ -234,8 +232,7 @@ window.addEventListener("DOMContentLoaded", function() {
             name: "FX Derivatives",
             uuid: "BGC Trader", // + appCounter++,
             urlciq: "https://ems-us1.redi.com/chartiq/stx-redi.html",
-            url: "https://openfin.co/",
-            urllo: "http://localhost:8081/index.html",
+            url: "http://localhost:8081/index.html",
             urliq: "http://openfin.chartiq.com/0.5/index.html",
             urlHello: "http://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/index.html",
             url2: "http://localhost:8080/childWindow.html/#/default",
@@ -245,7 +242,7 @@ window.addEventListener("DOMContentLoaded", function() {
             icon: "http://localhost:8081/openfin.ico",
             taskbarIconGroup: "bigw",
             autoShow: true,
-            frame: false,
+            frame: true,
             minimizable: false,
             maximizable: false,
             resizable: true,
@@ -597,6 +594,7 @@ window.addEventListener("DOMContentLoaded", function() {
       "Build Once. Deploy Instantly. Run Natively"
     );
     speechSynthesis.speak(speech);
+    fin.desktop.InterApplicationBus.publish("revalidate", {text: "I am here"});
   }
   document.getElementById("Speak").onclick = speak;
 });

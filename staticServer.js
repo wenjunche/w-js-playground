@@ -71,10 +71,12 @@ function serviceReq(request, response) {
             console.log(JSON.stringify(headers));
           }
 
-          response.writeHead(200, headers);
-          response.write(file, "binary");
-          console.log("200 " + mimeType + " " + request.url);
-          response.end();
+          setTimeout( () => {
+            response.writeHead(200, headers);
+            response.write(file, "binary");
+            console.log("200 " + mimeType + " " + request.url);
+            response.end();
+          }, 10000);
         });
       });
     } else if (request.method === "POST") {

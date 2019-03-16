@@ -13,45 +13,38 @@ Open another window
 </body>
 <script>
   document.getElementById('duplicate-window').onclick = () => {
-
     new fin.desktop.Window({
-
       name: `duplicate_main_window_${Math.random()}`,
-
       url: 'http://localhost:8081/IntervalFreeze.html',
       backgroundThrottling: false,
-
       autoShow: true
 
     })
+
   },
+
   document.getElementById('speed-test').onclick = () => {
     console.log('Preparing to run window speed tests...');
-    console.log('Testing with current window SHOWING')
+    console.log('\n\nTesting with current window SHOWING')
     const showingStart = (new Date()).getTime();
 
     new fin.desktop.Window({
       name: `test_window_shown_${Math.random()}`,
-      url: 'http://localhost:8081/IntervalFreeze.html'
+      url: 'about:blank'
     }, () => {
       console.log(`Time observed: ${(new Date()).getTime() - showingStart}ms`)
     }, console.error)
 
-    const timeoutStart = (new Date()).getTime();
     setTimeout(() => {
       console.log('\n\nTesting with current window HIDDEN');
-      console.log(`Time observed timeout: ${(new Date()).getTime() - timeoutStart}ms`)
-      const hidingStart = (new Date()).getTime();
 
       fin.desktop.Window.getCurrent().hide(() => {
         const hiddenStart = (new Date()).getTime();
-        console.log(`Time observed hiding: ${(new Date()).getTime() - hiddenStart}ms`)
 
         new fin.desktop.Window({
           name: `test_window_hidden_${Math.random()}`,
-          url: 'http://localhost:8081/IntervalFreeze.html',
-          autoShow: true,
-          backgroundThrottling: false
+          url: 'about:blank'
+
         }, () => {
           console.log(`Time observed: ${(new Date()).getTime() - hiddenStart}ms`)
           fin.desktop.Window.getCurrent().show();

@@ -11,6 +11,7 @@
     <!-- endbuild -->
     <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">-->
     <!--<link href="css/test.css" type="text/css" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <script type="text/javascript">
         window.addEventListener("load", function load(event){
                 console.log('loaded event');
@@ -106,10 +107,16 @@
         .glyphicon-asterisk:before {
             content: "\002a";
         }
+
+        h1 {
+            font-family: ‘Open Sans’, sans-serif;
+            font-size: 50px;
+        }        
     </style>
 </head>
 
 <body style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;">
+    <h1>Open Scans Font </h1>
     <!--<p style="font-family: 'Awesome-Font', Arial">Awesome-Font test</p>-->
     <!--<span class="glyphicon glyphicon-asterisk"></span>-->
 
@@ -195,12 +202,17 @@
     <div>    
      <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf" download=true>Download File</a>
     </div>
+    <div>    
+        <a href="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf">Download File</a>
+    </div>   
     <div id="customContextMenu">Custom Context Menu</div>
     <a href="#top">top top</a>
     <a href="fins://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/app.json">snap</a>
     <a href="fin://localhost:8081/app.json?$$a=1&$$b=2">DeepLinking</a>
       <!--object id="embedPdf" width="500" height="500" alt="pdf" type="application/pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html" title="HelloWorld">
       </object-->
+
+      <iframe width="420" height="315" src="https://example.com" frameborder="0" allowfullscreen></iframe>
 
       <!--iframe> width="420" height="315" src="https://www.youtube.com/embed/wZZ7oFKsKzY" frameborder="0" allowfullscreen></iframe-->
 
@@ -210,7 +222,7 @@
       <!--<iframe id="iframe1" width="100" height="100" src="http://www.foxnews.com/index.html" frameborder="0"></iframe>-->
         <!--<iframe id="iframe2" width="100" height="100" src="http://localhost:8081/childWindow.html" frameborder="0"></iframe>-->
         <!--<iframe id="iframe3" width="100" height="100" src="http://localhost:8081/empty.html" frameborder="0"></iframe>-->
-        <iframe id="iframe4" name="my-iframe" width="100" height="100" src="empty.html" frameborder="0"></iframe>
+        <iframe id="iframe4" name="my-iframe" width="100" height="100" src="http://localhost:8082/empty.html" frameborder="0"></iframe>
 
     <!-- <object data="https://www-bcf.usc.edu/~gareth/ISL/ISLR%20First%20Printing.pdf" type="application/pdf" width="500px" height="500px" style="border: 1px solid red;"></object> -->
 
@@ -251,6 +263,18 @@
     <!--<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">-->
     <!--Your browser does not support the audio element.-->
 <!--</audio>-->
+
+<video width="320" height="240" controls>
+    <!-- <source src="http://mirrors.standaloneinstaller.com/video-sample/jellyfish-25-mbps-hd-hevc.mp4" type="video/mp4"> -->
+    <!-- <source src="http://mirrors.standaloneinstaller.com/video-sample/video-sample.webm" type="video/webm">     -->
+    <!-- <source src=http://techslides.com/demos/sample-videos/small.webm type=video/webm>  -->
+    <!-- <source src=http://techslides.com/demos/sample-videos/small.ogv type=video/ogg> -->
+    <source src=http://techslides.com/demos/sample-videos/small.mp4 type=video/mp4>
+    <!-- <source src=http://techslides.com/demos/sample-videos/small.3gp type=video/3gp> -->
+</video>
+<audio controls>
+    <source src="http://www.music.helsinki.fi/tmt/opetus/uusmedia/esim/a2002011001-e02-128k.ogg" type="audio/mpeg">
+  </audio>
 
 <!--video id="video" autoplay></video>
 <img id="screenShotImg" src="">
