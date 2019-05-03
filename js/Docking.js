@@ -3,6 +3,13 @@
  */
 
 window.addEventListener("DOMContentLoaded", function() {
+
+  function openWindow() {
+    //        window.open('https://example.com');
+            window.open('http://localhost:8081/childWindow.html');
+  }    
+  document.getElementById("openWindow").onclick = openWindow;
+
   if (window.fin) {
     fin.desktop.main(function() {
 
@@ -96,8 +103,8 @@ window.addEventListener("DOMContentLoaded", function() {
               urlstx: "https://ems-us1.redi.com/chartiq/stx-redi.html",
               url3:
                 "http://openfin.github.io/example-fin-hypergrid-behavior-json/",
-              url: "https://example.com",
-              url5: "http://localhost:8081/childWindow.html",
+              urlof: "https://openfin.co",
+              url: "http://localhost:8081/childWindow.html",
                 icon: "http://localhost:8081/openfin.ico",
               urleik: "https://amers1.views.cp.reutest.com/web/eikonmessenger",
               icon1: "https://trade.proquote.com/icon",
@@ -127,8 +134,14 @@ window.addEventListener("DOMContentLoaded", function() {
               force: true,
               alwaysOnTop: false,
               contextMenu: true,
-              waitForPageLoad: true,
+              waitForPageLoad: false,
               delay_connectionxx: true,
+              api: {
+                iframe: {
+                  crossOriginInjection: true,
+                  sameOriginInjection: true
+                },
+              },
               resizeRegionxx: {
                 size: 10,
                 bottomRightCorner: 10,
@@ -403,7 +416,7 @@ window.addEventListener("DOMContentLoaded", function() {
       }
 
       function updateDimentions() {
-        document.getElementById("dimentions").innerHTML =
+        document.getElementById("dimentions").innerText =
           "x: " +
           window.screenLeft +
           ", y: " +
@@ -418,8 +431,19 @@ window.addEventListener("DOMContentLoaded", function() {
         fin.desktop.System.openUrlWithBrowser("https://openfin.co");
       }
 
+      function chromePage() {
+        var app = new fin.desktop.Application({
+          uuid: 'chromepage',
+          name: 'chromepage',
+          autoShow: true,
+          url: 'chrome://chrome-urls/'
+        });
+        app.run();
+      }
+
       document.getElementById("createWindows").onclick = createChildWindow;
       document.getElementById("createApp").onclick = createApp;
+      document.getElementById("chromePage").onclick = chromePage;
       //document.getElementById("OWA").onclick = createOWA;
       document.getElementById("getStates").onclick = getStates;
       document.getElementById("bringChild").onclick = bringChildFront;
@@ -454,7 +478,9 @@ window.addEventListener("DOMContentLoaded", function() {
   }
 
   function showNotificationCenter() {
-    fin.desktop.System.showChromeNotificationCenter();
+    // fin.desktop.System.showChromeNotificationCenter();
+    // May need to call Notification.requestPermission() first
+    new Notification('Hi there!');
   }
   document.getElementById(
     "NotificationCenter"

@@ -1,0 +1,53 @@
+{
+    "devtoolxs_port": 9090,
+    "startup_app": {
+        "name": "BigW2",
+        "uuid": "BigW2",
+        "url": "http://localhost:8081/index.html",
+        "taskbarIconGroup": "bigw",
+        "showTaskbarIcon": true,
+        "autoShow": true,
+        "defaultHeight": 500,
+        "defaultWidth": 500,
+        "maxHeightx": 600,
+        "frame": true,
+        "resizable": true,
+        "plugins": true,
+        "waitForPageLoad": true,
+        "saveWindowState": true,
+        "frameConnectxx": "all",
+        "transparent": false,
+        "contextMenuxx": true,
+        "contextMenuSettings": {
+          "enable": true,
+          "devtools": true,
+          "reload": true
+        },
+        "shadow": false,
+        "customWindowAlert": true,
+        "backgroundThrottling": true,
+        "backgroundColor": "red",
+        "spellCheck": true,
+        "experimental": {
+          "api": {
+            "iframe": {
+              "crossOriginInjection": false
+            }
+          },
+          "v2Apix": true,
+          "node": false
+        },
+        "resizeRegionx": {
+          "sides": {"bottom": false, "left": false}
+        },
+        "customData": {
+          "name": "OpenFin",
+          "address": "25 Broadway"
+        },
+        "accelerator": { "zoom": true }
+    },
+    "runtime": {
+        "arguments": " --disable-gpu --enable-aggressive-domstorage-flushing --force-device-scale-factor=1  --user-data-dir=C:\\debug ",
+        "version": "10.66.41.4"
+    }
+}
