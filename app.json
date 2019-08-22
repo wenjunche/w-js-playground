@@ -1,9 +1,9 @@
 {
-  "devtoolxs_port": 9090,
+  "devtools_port": 9090,
   "startup_app": {
-    "name": "BigW",
-    "uuid": "BigW",
-    "url": "http://localhost:8081/index.html",
+    "name": "BigW1",
+    "uuid": "BigW1",
+    "url": "http://localhost:8081/empty.html",
     "urlrtc": "https://webrtc.github.io/samples/",
     "urlgpu": "http://www.kevs3d.co.uk/dev/shaders/knot.html",
     "urlhttps": "https://localhost:8443/index.html",
@@ -14,8 +14,8 @@
     "taskbarIconGroup": "bigw",
     "showTaskbarIcon": true,
     "autoShow": true,
-    "defaultHeight": 500,
-    "defaultWidth": 500,
+    "defaultHeight": 700,
+    "defaultWidth": 700,
     "maxHeightx": 600,
     "frame": true,
     "resizable": true,
@@ -131,7 +131,7 @@
         "url": "http://localhost:8081/js/preload2.js"
       }
     ],
-    "permissionsxx": {
+    "permissions": {
       "System": {
         "getConfig": true,
         "launchExternalProcess": true,
@@ -156,21 +156,33 @@
   },
   "runtime": {
     "argumentsx": "--v=1 --noxx-sandbox --proxy-server=proxy.openfin.co:3128 --winhttp-proxy-resolver --framestrategy=frames --disable-init-reload --enable-mesh --enable-strict-api-permissionsxx --enable-chromium-renderer-fork --disable-init-load  --disable-web-security --max-connections-per-proxy=128 --log-net-log=c:\\debug\\net.json --enable-chromium-renderer-fork  --framestrategy=frames --proxyx-pac-url=http://localhost:8081/proxy.pac  --trace-startup  --trace-startup-file=c:\\AirLogs\\trace.json --trace-startup-duration=36000 --trace-to-console --utility-startup-dialog  --max-connections-per-proxy=128 --enable-precise-memory-info  --js-flags=\"--max-old-space-size=200\" --ignorexx-certificate-errors --renderer-process-limit=15 ",
-    "arguments": "--disablexx-background-timer-throttling --enable-aggressive-domstorage-flushing --disable-web-security --unsafely-treat-insecure-origin-as-secure=ws://gk.openfin.co:8800 --ignore-certificate-errors --disable-background-timer-throttling --xnoerrdialogs --v=99 --disablex-window-group-tracking=api,resize  --enable-precise-memory-info --disable-gpu-compositing --force-device-scale-factor=1 --enablexx-strict-api-permissions --js-flags=\"--expose-gc \" --loadx-extension=C:\\Users\\wenju\\Documents\\projects\\make_page_red_extension ",
+    "arguments": "--disable-web-security --v=1 --forcexx-renderer-accessibility --disablexx-background-timer-throttling --enable-aggressive-domstorage-flushing --disable-web-security --unsafely-treat-insecure-origin-as-secure=ws://gk.openfin.co:8800 --ignore-certificate-errors --disable-background-timer-throttling --xnoerrdialogs --v=99 --disablex-window-group-tracking=api,resize  --enable-precise-memory-info --disable-gpu-compositing --force-device-scale-factor=1 --enablexx-strict-api-permissions --js-flags=\"--expose-gc \" --loadx-extension=C:\\Users\\wenju\\Documents\\projects\\make_page_red_extension ",
     "version8": "8.56.30.75",
     "versionNGP": "10.66.39.27",
     "versionNative": "10.66.40.19",
-    "version": "beta"
+    "version13": "canary",
+    "version": "stable"
   },
   "servicesxx": [
     {
       "name": "layouts",
       "config": {
         "features": {
-          "tab": false,
+          "tab": true,
           "dock": true
         }
       }
+    }
+  ],
+  "servicexs": [
+    {
+      "name": "citra",
+      "manifestUrl": "http://playground.openfin.co/citra/citra-remote.json"
+    }
+  ],
+  "services": [
+    {
+      "name": "fdc3"
     }
   ],
   "appAssetsx": [

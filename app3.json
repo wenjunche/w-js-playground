@@ -1,0 +1,35 @@
+{
+  "devtools_port": 9090,
+  "startup_app": {
+      "name": "Java App Asset Demo",
+      "uuid": "Java  App AssetDemo",
+      "url": "https://openfin.co",
+      "autoShow": true,
+      "defaultHeight": 700,
+      "defaultWidth": 700,
+      "frame": true,
+      "resizable": true,
+      "contextMenuSettings": {
+        "enable": true,
+        "devtools": true,
+        "reload": true
+      },
+      "permissions": {
+        "System": {
+          "launchExternalProcess": true
+        }
+      }
+  },
+  "appAssets": [
+    {
+      "src": "https://cdn.openfin.co/demos/java/java-asset.zip",
+      "alias": "java-asset",
+      "target": "run.bat",
+      "version": "1.0.0"
+    }
+  ],  
+  "runtime": {
+      "arguments": "--v=1 ",
+      "version": "stable"
+  }
+}

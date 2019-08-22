@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FDC3 Simple Demo</title>
+    <style>
+        button {
+            margin: 3px
+        }
+    </style>
+    <script src="https://cdn.openfin.co/services/openfin/fdc3/0.2.0-alpha.34/openfin-fdc3.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("startRed").onclick = async function() {
+                await fdc3.open('charts-red');
+            };
+
+            let ticker = 'IBM';
+            document.getElementById("raiseIntent").onclick = async function() {
+                const result = await fdc3.raiseIntent("fdc3.ViewChart", {
+                                type: "fdc3.instrument",
+                                name: `${ticker}`,
+                                id: {
+                                    ticker: `${ticker.toLowerCase()}`
+                                    }
+                                }, 'charts-red');
+                const ele = document.getElementById("findResult");
+                ele.innerText = JSON.stringify(result);
+                ticker = ticker === 'IBM' ? 'ICE' : 'IBM';
+            };
+
+            document.getElementById("findIntent").onclick = async function() {
+                const data = await fdc3.findIntent('fdc3.ViewChart');
+                const ele = document.getElementById("findResult");
+                ele.innerText = JSON.stringify(data);
+            };
+
+            document.getElementById("findIntentContext").onclick = async function() {
+                const data = await fdc3.findIntentsByContext({
+                                        type: "fdc3.instrument",
+                                        name: "IBM",
+                                        id: {
+                                                ticker:"ibm"
+                                        }
+                                    });
+                const ele = document.getElementById("findResult");
+                ele.innerText = JSON.stringify(data);
+            };
+
+            document.getElementById("broadcast").onclick = async function() {
+                fdc3.broadcast({
+                                type: "fdc3.security",
+                                name: `${ticker}`,
+                                id: {
+                                    ticker: `${ticker.toLowerCase()}`
+                                    }
+                                });
+                const ele = document.getElementById("findResult");
+                ele.innerText = '';
+                ticker = ticker === 'IBM' ? 'ICE' : 'IBM';
+            };
+
+
+        });
+    </script>
+</head>
+<body>
+<div>
+    Start the demo from fdc3-server first.
+</div>
+<div>
+    <button id="startRed">Open Red chart</button>
+</div>
+<div>
+    <button id="raiseIntent">Toggle ticker to Red chart</button>
+</div>
+<div>
+        <button id="findIntent">Find intent of ViewCharts</button>
+</div>
+<div>
+        <button id="findIntentContext">Find intent of a context</button>
+</div>
+<div>
+        <button id="broadcast">broadcast to default channel</button>
+</div>
+<div>
+        <button id="findResult"></button>
+</div>
+</body>
+</html>

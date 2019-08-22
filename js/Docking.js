@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
   function openWindow() {
     //        window.open('https://example.com');
-            window.open('http://localhost:8081/childWindow.html');
+            window.open('http://localhost:8081/empty.html');
   }    
   document.getElementById("openWindow").onclick = openWindow;
 
@@ -69,6 +69,13 @@ window.addEventListener("DOMContentLoaded", function() {
         }
       });
 
+      fin.System.addListener('window-initialized', async d => {
+          let w = fin.Window.wrapSync(d);
+          // await w.close(true);
+          // createChildWindow();
+        }
+      );
+
       function createChildWindow1() {
         var dw = new fin.desktop.Window(
           {
@@ -86,6 +93,7 @@ window.addEventListener("DOMContentLoaded", function() {
         );
       }
 
+      let childCount = 1;
       function createChildWindow() {
         //            var cw = fin.desktop.Window.wrap(fin.desktop.Application.getCurrent().uuid, cname);
         //            cw.addEventListener("shown", function(event) {
@@ -96,7 +104,8 @@ window.addEventListener("DOMContentLoaded", function() {
         var dws = [];
         console.time("creating window");
         for (let cc = 0; cc < 1; cc++) {
-          let cname = "child0" + cc;
+          let cname = "child" + childCount;
+          childCount += 1;
           let dw = new fin.desktop.Window(
             {
               name: cname,
@@ -104,7 +113,7 @@ window.addEventListener("DOMContentLoaded", function() {
               url3:
                 "http://openfin.github.io/example-fin-hypergrid-behavior-json/",
               urlof: "https://openfin.co",
-              url: "http://localhost:8081/childWindow.html",
+              url: "http://localhost:8081/empty.html",
                 icon: "http://localhost:8081/openfin.ico",
               urleik: "https://amers1.views.cp.reutest.com/web/eikonmessenger",
               icon1: "https://trade.proquote.com/icon",
@@ -201,7 +210,7 @@ window.addEventListener("DOMContentLoaded", function() {
               console.error("child window failed", v);
             }
           );
-          dws.push(dw);
+//          dws.push(dw);
 
           // dw.addEventListener("close-requested", function closeReqListener(v) {
           //   console.log(v);

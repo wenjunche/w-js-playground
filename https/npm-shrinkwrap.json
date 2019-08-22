@@ -1,26 +1,39 @@
 {
   "name": "https-server",
   "version": "1.0.0",
+  "lockfileVersion": 1,
+  "requires": true,
   "dependencies": {
+    "@types/node": {
+      "version": "8.10.49",
+      "resolved": "https://registry.npmjs.org/@types/node/-/node-8.10.49.tgz",
+      "integrity": "sha512-YX30JVx0PvSmJ3Eqr74fYLGeBxD+C7vIL20ek+GGGLJeUbVYRUW3EzyAXpIRA0K8c8o0UWqR/GwEFYiFoz1T8w==",
+      "dev": true
+    },
     "async-limiter": {
       "version": "1.0.0",
-      "from": "async-limiter@>=1.0.0 <1.1.0",
-      "resolved": "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.0.tgz"
+      "resolved": "https://registry.npmjs.org/async-limiter/-/async-limiter-1.0.0.tgz",
+      "integrity": "sha512-jp/uFnooOiO+L211eZOoSyzpOITMXx1rBITauYykG3BRYPu8h0UcxsPNB04RR5vo4Tyz3+ay17tR6JVf9qzYWg=="
     },
     "safe-buffer": {
       "version": "5.1.1",
-      "from": "safe-buffer@>=5.1.0 <5.2.0",
-      "resolved": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.1.tgz"
+      "resolved": "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.1.tgz",
+      "integrity": "sha512-kKvNJn6Mm93gAczWVJg7wH+wGYWNrDHdWvpUmHyEsgCtIwwo3bqPtV4tR5tuPaUhTOo/kvhVwd8XwwOllGYkbg=="
     },
     "ultron": {
       "version": "1.1.0",
-      "from": "ultron@>=1.1.0 <1.2.0",
-      "resolved": "https://registry.npmjs.org/ultron/-/ultron-1.1.0.tgz"
+      "resolved": "https://registry.npmjs.org/ultron/-/ultron-1.1.0.tgz",
+      "integrity": "sha1-sHoualQagV/Go0zNRTO67DB8qGQ="
     },
     "ws": {
       "version": "3.2.0",
-      "from": "ws@latest",
-      "resolved": "https://registry.npmjs.org/ws/-/ws-3.2.0.tgz"
+      "resolved": "https://registry.npmjs.org/ws/-/ws-3.2.0.tgz",
+      "integrity": "sha512-hTS3mkXm/j85jTQOIcwVz3yK3up9xHgPtgEhDBOH3G18LDOZmSAG1omJeXejLKJakx+okv8vS1sopgs7rw0kVw==",
+      "requires": {
+        "async-limiter": "~1.0.0",
+        "safe-buffer": "~5.1.0",
+        "ultron": "~1.1.0"
+      }
     }
   }
 }

@@ -1,9 +1,10 @@
 {
-    "devtoolxs_port": 9090,
+    "devtools_port": 9090,
     "startup_app": {
         "name": "BigW2",
         "uuid": "BigW2",
         "url": "http://localhost:8081/index.html",
+        "urlof": "https://openfin.co",
         "taskbarIconGroup": "bigw",
         "showTaskbarIcon": true,
         "autoShow": true,
@@ -44,10 +45,25 @@
           "name": "OpenFin",
           "address": "25 Broadway"
         },
-        "accelerator": { "zoom": true }
+        "permissions": {
+          "System": {
+            "launchExternalProcess": true
+          }
+        },    
+        "accelerator": { "zoom": true, "devtools": true }
     },
+    "appAssets": [
+      {
+        "src": "https://cdn.openfin.co/demos/java/java-asset.zip",
+        "alias": "java-asset",
+        "target": "run.bat",
+        "version": "1.0.0"
+      }
+    ],  
     "runtime": {
-        "arguments": " --disable-gpu --enable-aggressive-domstorage-flushing --force-device-scale-factor=1  --user-data-dir=C:\\debug ",
-        "version": "10.66.41.4"
+        "arguments": "--security-realm=test --disable-gpu-compositing --enable-aggressive-domstorage-flushing --force-device-scale-factor=1 --inspect --v=1 ",
+        "version": "8.56.30.71",
+        "version9": "9.61.38.43",
+        "version": "stable"
     }
 }

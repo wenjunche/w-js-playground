@@ -1,0 +1,27 @@
+{
+    "devtools_port": 9090,
+    "startup_app": {
+      "name": "fdc3demo",
+      "uuid": "fdc3demo",
+      "url": "http://localhost:8081/fdc3/index.html",
+      "showTaskbarIcon": true,
+      "autoShow": true,
+      "frame": true,
+      "resizable": true,
+      "contextMenuSettings": {
+        "enable": true,
+        "devtools": true,
+        "reload": true
+      }
+    },
+    "runtime": {
+      "arguments": "--disable-web-security --v=1  --ignore-certificate-errors   --enable-precise-memory-info --force-device-scale-factor=1 ",
+      "version": "10.66.41.18"
+    },
+    "services": [
+      {
+        "name": "fdc3"
+      }
+    ]
+  }
+  
