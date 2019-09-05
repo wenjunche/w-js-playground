@@ -3,7 +3,7 @@
   "startup_app": {
     "name": "BigW1",
     "uuid": "BigW1",
-    "url": "http://localhost:8081/empty.html",
+    "url": "http://localhost:8081/index.html",
     "urlrtc": "https://webrtc.github.io/samples/",
     "urlgpu": "http://www.kevs3d.co.uk/dev/shaders/knot.html",
     "urlhttps": "https://localhost:8443/index.html",
@@ -161,7 +161,7 @@
     "versionNGP": "10.66.39.27",
     "versionNative": "10.66.40.19",
     "version13": "canary",
-    "version": "stable"
+    "version": "13.76.43.30"
   },
   "servicesxx": [
     {

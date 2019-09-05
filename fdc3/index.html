@@ -28,6 +28,19 @@
                 ticker = ticker === 'IBM' ? 'ICE' : 'IBM';
             };
 
+            document.getElementById("javafdc3").onclick = async function() {
+                const result = await fdc3.raiseIntent("fdc3.ViewChart", {
+                                type: "fdc3.instrument",
+                                name: `${ticker}`,
+                                id: {
+                                    ticker: `${ticker.toLowerCase()}`
+                                    }
+                                }, 'JavaFDC3Demo');
+                const ele = document.getElementById("findResult");
+                ele.innerText = JSON.stringify(result);
+                ticker = ticker === 'IBM' ? 'ICE' : 'IBM';
+            };
+
             document.getElementById("findIntent").onclick = async function() {
                 const data = await fdc3.findIntent('fdc3.ViewChart');
                 const ele = document.getElementById("findResult");
@@ -60,6 +73,11 @@
             };
 
 
+            fdc3.addContextListener( (context) => {
+                const ele = document.getElementById("findResult");
+                ele.innerText = `Received broadcasted context: ${JSON.stringify(context)}`;
+            } );
+
         });
     </script>
 </head>
@@ -81,6 +99,9 @@
 </div>
 <div>
         <button id="broadcast">broadcast to default channel</button>
+</div>
+<div>
+    <button id="javafdc3">Raise an intent to Java FDC3 demo</button>
 </div>
 <div>
         <button id="findResult"></button>

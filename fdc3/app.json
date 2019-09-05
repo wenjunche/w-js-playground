@@ -18,7 +18,7 @@
       "arguments": "--disable-web-security --v=1  --ignore-certificate-errors   --enable-precise-memory-info --force-device-scale-factor=1 ",
       "version": "10.66.41.18"
     },
-    "services": [
+    "servicesx": [
       {
         "name": "fdc3"
       }
