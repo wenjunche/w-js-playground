@@ -1,0 +1,79 @@
+{
+    "platform": {
+        "uuid": "example_platform",
+        "applicationIcon": "https://openfin.github.io/golden-prototype/favicon.ico",
+        "autoShow": false,
+        "defaultWindowOptions": {
+            "cornerRounding": {
+                "height": 20,
+                "width": 20
+            },
+            "contextMenu": true
+        }
+    },
+    "snapshot": {
+        "windows": [
+            {
+                "defaultWidth": 600,
+                "defaultHeight": 600,
+                "layout": {
+                    "content": [
+                        {
+                            "type": "stack",
+                            "content": [
+                                {
+                                    "type": "component",
+                                    "componentName": "view",
+                                    "componentState": {
+                                        "name": "component_A1",
+                                        "processAffinity": "ps_1",
+                                        "url": "http://localhost:9000/index.html"
+                                    }
+                                },
+                                {
+                                    "type": "component",
+                                    "componentName": "view",
+                                    "componentState": {
+                                        "name": "component_A2",
+                                        "url": "https://cdn.openfin.co/embed-web/chart.html"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "defaultWidth": 600,
+                "defaultHeight": 600,
+                "defaultLeft": 200,
+                "defaultTop": 200,
+                "layout": {
+                    "content": [
+                        {
+                            "type": "stack",
+                            "content": [
+                                {
+                                    "type": "component",
+                                    "componentName": "view",
+                                    "componentState": {
+                                        "name": "component_B1",
+                                        "url": "https://openfin.co"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "startup_appxxx": {
+        "url": "http://localhost:9000/index.html"
+    },
+    "runtime": {
+        "arguments": "--v=1 --inspect",
+        "version": "17.85.53.10",
+        "version4": "14.78.47.23"
+    }
+}
