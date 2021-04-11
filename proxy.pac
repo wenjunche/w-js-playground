@@ -8,10 +8,12 @@ if (dnsDomainIs(host, "chartiq.com"))
     return "DIRECT";
 
 if (dnsDomainIs(host, "google.com"))
-    return "DIRECT";
+    return "PROXY proxy.openfin.co:3128;";
+//return "DIRECT";
 
 if (dnsDomainIs(host, "googleapis.com"))
-    return "DIRECT";
+    return "PROXY proxy.openfin.co:3129;";
+//  return "DIRECT";
 
 if (dnsDomainIs(host, "google-analytics.com"))
     return "DIRECT";

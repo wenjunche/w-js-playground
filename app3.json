@@ -1,35 +1,33 @@
 {
-  "devtools_port": 9090,
-  "startup_app": {
-      "name": "Java App Asset Demo",
-      "uuid": "Java  App AssetDemo",
-      "url": "https://openfin.co",
-      "autoShow": true,
-      "defaultHeight": 700,
-      "defaultWidth": 700,
-      "frame": true,
-      "resizable": true,
-      "contextMenuSettings": {
-        "enable": true,
-        "devtools": true,
-        "reload": true
-      },
-      "permissions": {
-        "System": {
-          "launchExternalProcess": true
-        }
-      }
+	"startup_app": {
+	  "name": "BigW3",
+	  "uuid": "BigW3",
+	  "url": "http://localhost:9000/empty.html",
+	  "autoShow": true,
+	  "frame": true,
+	  "defaultCentered": true,
+	  "resizable": true,
+	  "transparent": false,
+	  "saveWindowState": false,
+	  "defaultHeight": 400,
+	  "defaultWidth": 400,
+	  "backgroundThrottling": true,
+	  "nonPersistent": false
+	},
+	"runtime": {
+		"arguments": " --v=1 --enable-crash-reporting --no-sandbox ",
+	  "version": "stable"
   },
-  "appAssets": [
+  "services": [
     {
-      "src": "https://cdn.openfin.co/demos/java/java-asset.zip",
-      "alias": "java-asset",
-      "target": "run.bat",
-      "version": "1.0.0"
+      "name": "fdc3",
+      "manifestUrl": "http://localhost:9000/app2.json"
     }
   ],  
-  "runtime": {
-      "arguments": "--v=1 ",
-      "version": "stable"
+	"shortcut" : {
+		"company" : "BigW",
+		"description" : "BigW",
+		"name" : "BigW"
+		},
+	"licenseKey": "0b4480af-dc98-439f-b4a4-97ce0c78b218"
   }
-}

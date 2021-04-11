@@ -1,10 +1,9 @@
 {
   "devtools_portx": 9090,
-  "websocket_port": 8000,
   "startup_app": {
     "name": "BigW1",
     "uuid": "BigW1",
-    "url": "http://localhost:9000/index.html",
+    "url": "http://localhost:9000/empty.html",
     "urlrtc": "https://webrtc.github.io/samples/",
     "urlgpu": "http://www.kevs3d.co.uk/dev/shaders/knot.html",
     "urlhttps": "https://localhost:8443/index.html",
@@ -143,7 +142,6 @@
       "System": {
         "getConfig": true,
         "launchExternalProcess": true,
-        "downloadAsset": true,
         "Clipboard": {
           "availableFormats": true
         },
@@ -192,14 +190,6 @@
   "servicesx": [
     {
       "name": "notifications"
-    }
-  ],
-  "appAssets": [
-    {
-      "src": "https://demoappdirectory.openf.in/desktop/config/apps/OpenFin/HelloOpenFin/procexp.zip",
-      "alias": "procexp",
-      "target": "procexp.exe",
-      "version": "1.0.4"
     }
   ],
   "appAssetsxx": [

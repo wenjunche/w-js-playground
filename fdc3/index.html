@@ -7,42 +7,42 @@
             margin: 3px
         }
     </style>
-    <script src="https://cdn.openfin.co/services/openfin/fdc3/0.2.0-alpha.34/openfin-fdc3.js"></script>
+    <script src="http://localhost:9001/openfin-fdc3.js"></script>
     <script>
-        window.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener("DOMContentLoaded", async function() {
             document.getElementById("startRed").onclick = async function() {
-                await fdc3.open('charts-red');
+                await fdc3.open('fdc3-charts-red');
             };
 
             let ticker = 'IBM';
             document.getElementById("raiseIntent").onclick = async function() {
-                const result = await fdc3.raiseIntent("fdc3.ViewChart", {
+                const result = await fdc3.raiseIntent("ViewChart", {
                                 type: "fdc3.instrument",
                                 name: `${ticker}`,
                                 id: {
                                     ticker: `${ticker.toLowerCase()}`
                                     }
-                                }, 'charts-red');
+                                }, 'fdc3-charts-red');
                 const ele = document.getElementById("findResult");
                 ele.innerText = JSON.stringify(result);
                 ticker = ticker === 'IBM' ? 'ICE' : 'IBM';
             };
 
             document.getElementById("javafdc3").onclick = async function() {
-                const result = await fdc3.raiseIntent("fdc3.ViewChart", {
+                const result = await fdc3.raiseIntent("ViewChartByJava", {
                                 type: "fdc3.instrument",
                                 name: `${ticker}`,
                                 id: {
                                     ticker: `${ticker.toLowerCase()}`
                                     }
-                                }, 'JavaFDC3Demo');
+                                });
                 const ele = document.getElementById("findResult");
                 ele.innerText = JSON.stringify(result);
                 ticker = ticker === 'IBM' ? 'ICE' : 'IBM';
             };
 
             document.getElementById("findIntent").onclick = async function() {
-                const data = await fdc3.findIntent('fdc3.ViewChart');
+                const data = await fdc3.findIntent('ViewChart');
                 const ele = document.getElementById("findResult");
                 ele.innerText = JSON.stringify(data);
             };
@@ -61,7 +61,7 @@
 
             document.getElementById("broadcast").onclick = async function() {
                 fdc3.broadcast({
-                                type: "fdc3.security",
+                                type: "fdc3.instrument",
                                 name: `${ticker}`,
                                 id: {
                                     ticker: `${ticker.toLowerCase()}`
@@ -77,6 +77,21 @@
                 const ele = document.getElementById("findResult");
                 ele.innerText = `Received broadcasted context: ${JSON.stringify(context)}`;
             } );
+
+            const red = await fdc3.getChannelById('red');
+            red.addContextListener( (context) => {
+                console.log('red context', context);
+            } );
+
+            // const blue = await fdc3.getChannelById('blue');
+            // blue.addContextListener( (context) => {
+            //     console.log('blue context', context);
+            // } );
+
+            fdc3.addContextListener( (context) => {
+                console.log('root context', context);
+            } );
+
 
         });
     </script>

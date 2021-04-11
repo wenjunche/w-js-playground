@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://openfin.co/schemas/desktopOwnerSettingsSchema.json",
+    "type": "object",
+    "additionalProperties": false,    
+    "properties": {
+        "applicationSettings": {
+            "type": "object",
+            "properties": {
+                "default": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "permissions": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "additionalProperties": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "urls": {
+                        "type": "array",
+                        "items": { "type": "string"},
+                        "uniqueItems": true,
+                        "description": "List of manifest URLs to have the permissions.  Wildcard match is supported"
+                    },
+                    "permissions": {
+                        "type": "object"
+                    }
+                }
+            }
+        },
+        "desktopSettings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "analyticsUrl": {
+                    "type": "string"
+                },
+                "appDirectoryUrl": {
+                    "type": "string"
+                },
+                "openfinSystemApplications": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "version": {
+                                "type": "string"
+                            },
+                            "assetsUrl": {
+                                "type": "string"
+                            },
+                            "customData": {
+                                "type": "object",
+                                "description": "Custom configuration for the system application"
+                            }
+                        }
+                    }
+                },
+                "openfinSystemSettings": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "serviceWindow": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "start": {
+                                    "type": "string",
+                                    "pattern": "^([1-7]\\s([0-9]|1[0-9]|2[0-3])\\s([0-9]|[1-5][0-9]))$",
+                                    "description": "Format: dayOfWeek hour minute",
+                                    "default": "6 2 0"
+                                },
+                                "end": {
+                                    "type": "string",
+                                    "pattern": "^([1-7]\\s([0-9]|1[0-9]|2[0-3])\\s([0-9]|[1-5][0-9]))$",
+                                    "description": "Format: dayOfWeek hour minute",
+                                    "default": "6 2 0"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

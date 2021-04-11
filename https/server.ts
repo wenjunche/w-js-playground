@@ -1,8 +1,10 @@
 
 import * as https from 'https';
+import * as http from 'http';
 import * as fs from 'fs';
 import * as url from "url";
 import * as path from "path";
+
 
 const PORT: number = 8443;
 
@@ -11,11 +13,16 @@ const options: https.ServerOptions = {
     cert: fs.readFileSync('server-crt.pem'),
     requestCert: true,
     rejectUnauthorized: true,
-//    ca: [ fs.readFileSync('client-crt.pem') ]
-    ca: [ fs.readFileSync('client-crt.pem'), fs.readFileSync('client-crt2.pem') ]
+    ca: [ fs.readFileSync('client-crt.pem') ]
+//    ca: [ fs.readFileSync('client-crt.pem'), fs.readFileSync('client-crt2.pem') ]
 };
 
-https.createServer(options, (req: https.IncomingMessage, res: https.ServerResponse) => {
+https.createServer(options, (req: http.IncomingMessage, res: http.ServerResponse) => {
+    console.log(`GET ${req.url}`);
+//    tls: tls.TLSSocket = req.socket as tls.TLSSocket;
+    // @ts-ignore
+    const cert = req.socket.getPeerCertificate();
+    console.log(JSON.stringify(cert));
 
     if (req.method === 'GET') {
         let uri = url.parse(req.url).pathname,

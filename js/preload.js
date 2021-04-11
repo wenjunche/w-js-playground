@@ -4,7 +4,10 @@ var _preload = 12345;
 console.log('setting _preload', _preload);
 
 console.log(`Hello from my preload script again18 ${location.href} `);
-
+if(location.href === 'https://openfin.co/') {
+    console.log('trying to stopNavigation()')
+    fin.window.getCurrentSync().stopNavigation();
+}
 
 window.addEventListener("DOMContentLoaded", function() {
     console.log(`DOMContentLoaded from my preload script ${location.href} `);
@@ -99,3 +102,11 @@ function visibilityChangedDecorator(payload, args) {
     const [, visible, closing] = args;
     console.log(visible, closing);
 }
+
+async function getM() {
+    console.log('getMonitorInfo')
+    var m = await fin.System.getMonitorInfo()
+    console.log(m)
+}
+
+getM()

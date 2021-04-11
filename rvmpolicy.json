@@ -1,9 +1,15 @@
-{  
+{
   "applicationSettings": {
+    "rules": [
+
+    ],
     "MyPolicies": {
-      "urls": ["http://localhost:8081/app.json"],
+      "urls": [
+        "http://localhost:9000/app.json"
+      ],
       "permissions": {
         "System": {
+          "downloadAsset": true,
           "launchExternalProcess": true
         },
         "Window": {
@@ -15,8 +21,56 @@
       "permissions": {
         "System": {
           "launchExternalProcess": false
-          }
+        }
+      }
+    },
+    "http://localhost:9000/app.json": {
+      "mappedFiles": {
+        "exampleName": {
+          "path": "C:\\dev\\memMapFile",
+          "access": "READ_WRITE"
+        }
       }
     }
-  }
+  },
+  "desktopSettings": {
+    "analyticsUrl": "https://ingest-dev.openfin.co/desktop-analytics/",
+    "analyticsUrlxx": "http://localhost:7071/desktop-analytics/",
+    "appDirectoryUrl": "https://app-directory-dev.openfin.co",
+    "openfinSystemApplications": {
+      "notificationCenter": {
+          "version": "2.0",
+          "assetsUrl": "file:///C:/Users/wenju/Documents/projects/w-js-playground/",
+          "customData": {
+            "someKey": "some data"
+          }
+      },
+      "home": {
+        "version": "1.0",
+        "assetsUrl": "https://myhost/path",
+        "customConfig": {
+          "home": "Sweet Home"
+        }
+    },
+    "openfinSystemSettings": {
+      "serviceWindow": {
+        
+      }
+    }    
+  },
+  "services": [
+    {
+      "name": "suite",
+      "config": {
+        "org": "myorg"
+      }
+    },
+    {
+      "name": "fdc3",
+      "config": {
+        "applicationDirectory": "https://app-directory-dev.openfin.co/api/v1/apps"
+      }
+    }
+  ]
+ }
 }

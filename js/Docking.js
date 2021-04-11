@@ -11,7 +11,12 @@ window.addEventListener("DOMContentLoaded", function() {
   document.getElementById("openWindow").onclick = openWindow;
 
   if (window.fin) {
-    fin.desktop.main(function() {
+    fin.desktop.main(async function() {
+
+      const ch = await fin.InterApplicationBus.Channel.connect('ChannelExample2');
+      ch.onDisconnection(channelInfo => {
+        console.log(channelInfo) 
+      });
 
       // var dockingManager = DockingManager.getInstance();
       // dockingManager.init({spacing: 5, range: 50, undockOffsetX: 10, undockOffsetY: 10});
@@ -104,7 +109,7 @@ window.addEventListener("DOMContentLoaded", function() {
         var dws = [];
         console.time("creating window");
         for (let cc = 0; cc < 1; cc++) {
-          let cname = "child" + childCount;
+          let cname = "child"; // + childCount;
           childCount += 1;
           let dw = new fin.desktop.Window(
             {
@@ -113,7 +118,7 @@ window.addEventListener("DOMContentLoaded", function() {
               url3:
                 "http://openfin.github.io/example-fin-hypergrid-behavior-json/",
               urlof: "https://openfin.co",
-              url: "http://localhost:8081/empty.html",
+              url: "http://localhost:8082/childWindow.html",
                 icon: "http://localhost:8081/openfin.ico",
               urleik: "https://amers1.views.cp.reutest.com/web/eikonmessenger",
               icon1: "https://trade.proquote.com/icon",
@@ -167,11 +172,12 @@ window.addEventListener("DOMContentLoaded", function() {
               frameConnect: "all",
               cornerRoundingxx: { width: 33, height: 33 },
               backgroundThrottling: true,
-              preloadxx: "http://localhost:8081/js/preload.js",
-              experimental: {
-                node: false
-              },
-              customData: {
+              preload: [
+                {
+                  "url": "http://localhost:8082/js/preload.js"
+                }
+              ],
+                        customData: {
                 name: "child window"
               },
               permissions: {
@@ -187,7 +193,11 @@ window.addEventListener("DOMContentLoaded", function() {
                 }
               ],
               contentNavigation: {
-                whitelist: [
+                blacklist: [
+                  'https://notes-dev.openfin.co/api/oauth/callback*',
+                  'http://localhost:8088/api/oauth/callback*'
+                ],
+                whitelistxx: [
                   "https://example.com",
                   "http://www.awesomium.com/",
                   "http://localhost:8081/*"

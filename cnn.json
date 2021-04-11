@@ -1,0 +1,11 @@
+{
+	"startup_app": {
+	  "name": "home_view_test",
+	  "uuid": "home_view_test",
+	  "url": "https://cnn.com",
+	  "autoShow": true
+	},
+	"runtime": {
+	  "version": "stable"
+	}
+  }

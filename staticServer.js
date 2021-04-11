@@ -16,6 +16,7 @@ const http = require("http"),
   };
 
 function serviceReq(request, response) {
+    console.log('processing', request.url);
     // SSE
     if (
       request.url === "/events" &&
@@ -23,7 +24,17 @@ function serviceReq(request, response) {
       request.headers.accept === "text/event-stream"
     ) {
       sendSSE(request, response);
-    } else if (request.method === "GET") {
+    }
+    else if (request.url === '/redirect') {
+      console.log('redirecting from', request.url);
+      response.writeHead(302, {
+        // 'Access-Control-Allow-Origin': '*',
+        // 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+        'Location': 'https://openfin.co'
+      });
+      response.end();        
+    } 
+    else if (request.method === "GET") {
       let uri = url.parse(request.url).pathname,
         filename = path.join(process.cwd(), uri);
 
@@ -54,8 +65,10 @@ function serviceReq(request, response) {
           if (!mimeType) {
             mimeType = "text/plain";
           }
-          let headers = { "Content-Type": mimeType };
-
+          let headers = { "Content-Type": mimeType };          
+          // headers['Access-Control-Allow-Origin'] = '*';
+          // headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept';
+    
           if (uri === "/index.html") {
             //		  	headers['Cache-Control'] = 'private, max-age=46800';
             //		  	headers['Expires'] = 'Fri, 24 Mar 2017 09:04:14 GMT';
@@ -76,7 +89,7 @@ function serviceReq(request, response) {
             response.write(file, "binary");
             console.log("200 " + mimeType + " " + request.url);
             response.end();
-          }, 10000);
+          }, 100);
         });
       });
     } else if (request.method === "POST") {
@@ -88,8 +101,12 @@ function serviceReq(request, response) {
       });
       request.on("end", function() {
         console.log("Body: " + body);
-        response.writeHead(200, { "Content-Type": "text/html" });
-        response.end("post received");
+        response.writeHead(302, {
+          'Location': 'http://localhost:9000/empty.html'
+        });
+        response.end();        
+        // response.writeHead(200, { "Content-Type": "text/html" });
+        // response.end("post received");
       });
     }
   }

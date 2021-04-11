@@ -1,35 +1,65 @@
 {
-  "devtools_port": 9090,
-  "startup_app": {
-    "name": "Beacon",
-    "url3": "http://perpetualnyc.com/beacon/index.html",
-    "url": "file:///C:/Users/wenjun/Documents/Project/hadouken-core/src/certificate/index.html",
-    "__url": "http://localhost:5000/index.html?debug",
-    "uuid": "beacon",
-    "autoShow": true,
-    "defaultWidth": 1200,
-    "defaultHeight": 700,
-    "saveWindowState": false,
-    "top": 30,
-    "resizable": true,
-    "nonPersistent": true,
-    "icon": "http://perpetualnyc.com/beacon/beacon_icon.ico",
-    "__icon": "http://localhost:5000/favicon.ico",
-    "applicationIcon": "http://perpetualnyc.com/beacon/beacon_icon.ico",
-    "__applicationIcon": "http://localhost:5000/favicon.ico",
-    "taskbarIcon": "http://perpetualnyc.com/beacon/beacon_icon.ico"
+  "licenseKey" : "64605fac-add3-48a0-8710-64b38e96a2dd",
+  "runtime" : {
+      "version" : "14.78.47.12"
   },
-  "runtime": {
-    "arguments": "--enable-multi-runtime",
-    "version6": "6.49.21.24",
-    "versionX": "community",
-    "version7": "7.53.23.23",
-    "version": "8.56.24.41",
-    "forceLatest": true
-  },
-  "supportInformation": {
-    "company": "Perpetual",
-    "product": "Beacon",
-    "email": "dev@perpetualny.com"
+  "services" : [
+      {
+          "name" : "notifications"
+      },
+      {
+          "name" : "fdc3"
+      }
+  ],
+  "startup_app" : {
+      "accelerator" : {
+          "zoom" : true
+      },
+      "backgroundColor" : "#121212",
+      "defaultHeight" : 800,
+      "defaultWidth" : 800,
+      "description" : "Openfin Application Launcher",
+      "frame" : false,
+      "layout" : {
+          "windows" : [
+              {
+                  "backgroundThrottling" : true,
+                  "defaultHeight" : 600,
+                  "defaultLeft" : 0,
+                  "defaultTop" : 0,
+                  "defaultWidth" : 800,
+                  "layoutConfig" : {
+                      "content" : [
+                          {
+                              "activeItemIndex" : 0,
+                              "content" : [
+                                  {
+                                      "componentName" : "view",
+                                      "componentState" : {
+                                          "name" : "cdn-openfin-co-demos-gmapps-charts-app-json",
+                                          "url" : "https://cdn.openfin.co/demos/gmapps/charts-app.json"
+                                      },
+                                      "isClosable" : true,
+                                      "reorderEnabled" : true,
+                                      "title" : "view",
+                                      "type" : "component"
+                                  }
+                              ],
+                              "isClosable" : true,
+                              "reorderEnabled" : true,
+                              "title" : "",
+                              "type" : "stack",
+                              "width" : 100
+                          }
+                      ]
+                  },
+                  "name" : "cdn-openfin-co-demos-gmapps-charts-app-json_1575389710963",
+                  "saveWindowState" : false
+              }
+          ]
+      },
+      "name" : "launcher-app",
+      "uuid" : "launcher-app",
+      "waitForPageLoad" : false
   }
 }

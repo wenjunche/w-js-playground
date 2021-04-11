@@ -96,3 +96,35 @@ async function fetchAndInclude(request) {
         headers: response.headers
     })
 }
+
+self.addEventListener("push", async ev => {
+    const data = ev.data.text();
+    console.log("got push", data);
+    console.log("sent default notification");
+    self.registration.showNotification(data, {
+            body: "Hello new subscriber!",
+            icon:
+              "https://raw.githubusercontent.com/snwh/paper-icon-theme/master/Paper/512x512/apps/preferences-color.png"
+          }        
+        );
+  });
+  
+  self.addEventListener('message', function handler (event) {
+    console.log(`receiving message: ${event.data}`);
+  });
+  
+
+  function andrew() {
+      let i = 0;
+      if (i === 0) {
+          let k = 1;
+          var m = 1;
+
+      }
+      k = 1;
+      m = 2
+  }
+
+
+
+

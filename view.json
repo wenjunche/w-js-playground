@@ -1,0 +1,11 @@
+{
+	"startup_app": {
+	  "name": "Test",
+	  "uuid": "Test",
+	  "url": "https://foxnews.com",
+	  "autoShow": true
+	},
+	"runtime": {
+	  "version": "stable"
+	}
+  }

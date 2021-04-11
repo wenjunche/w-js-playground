@@ -3,7 +3,7 @@
     "startup_app": {
         "name": "alpha-mask",
         "description": "alpha-mask",
-        "url": "http://localhost:8081/alphamask/",
+        "url": "http://localhost:8081/index.html",
         "uuid": "alpha-mask",
         "autoShow": true,
         "frame": false,

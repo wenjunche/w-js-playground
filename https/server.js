@@ -14,6 +14,8 @@ var options = {
     ca: [fs.readFileSync('client-crt.pem'), fs.readFileSync('client-crt2.pem')]
 };
 https.createServer(options, function (req, res) {
+    const cert = req.socket.getPeerCertificate();
+    console.log(JSON.stringify(cert.subject));
     if (req.method === 'GET') {
         var uri = url.parse(req.url).pathname, filename_1 = path.join(process.cwd(), uri);
         fs.exists(filename_1, function (exists) {

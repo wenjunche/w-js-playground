@@ -1,69 +1,31 @@
 {
-    "devtools_port": 9090,
-    "startup_app": {
-        "name": "BigW2",
-        "uuid": "BigW2",
-        "url": "http://localhost:8081/index.html",
-        "urlof": "https://openfin.co",
-        "taskbarIconGroup": "bigw",
-        "showTaskbarIcon": true,
-        "autoShow": true,
-        "defaultHeight": 500,
-        "defaultWidth": 500,
-        "maxHeightx": 600,
-        "frame": true,
-        "resizable": true,
-        "plugins": true,
-        "waitForPageLoad": true,
-        "saveWindowState": true,
-        "frameConnectxx": "all",
-        "transparent": false,
-        "contextMenuxx": true,
-        "contextMenuSettings": {
-          "enable": true,
-          "devtools": true,
-          "reload": true
-        },
-        "shadow": false,
-        "customWindowAlert": true,
-        "backgroundThrottling": true,
-        "backgroundColor": "red",
-        "spellCheck": true,
-        "experimental": {
-          "api": {
-            "iframe": {
-              "crossOriginInjection": false
-            }
-          },
-          "v2Apix": true,
-          "node": false
-        },
-        "resizeRegionx": {
-          "sides": {"bottom": false, "left": false}
-        },
-        "customData": {
-          "name": "OpenFin",
-          "address": "25 Broadway"
-        },
-        "permissions": {
-          "System": {
-            "launchExternalProcess": true
-          }
-        },    
-        "accelerator": { "zoom": true, "devtools": true }
-    },
-    "appAssets": [
-      {
-        "src": "https://cdn.openfin.co/demos/java/java-asset.zip",
-        "alias": "java-asset",
-        "target": "run.bat",
-        "version": "1.0.0"
-      }
-    ],  
-    "runtime": {
-        "arguments": "--security-realm=test --disable-gpu-compositing --enable-aggressive-domstorage-flushing --force-device-scale-factor=1 --inspect --v=1 ",
-        "version": "8.56.30.71",
-        "version9": "9.61.38.43",
-        "version": "stable"
-    }
-}
+	"startup_app": {
+	  "name": "Test",
+	  "uuid": "Test",
+	  "url": "http://localhost:9000/empty.html",
+	  "autoShow": true,
+	  "frame": true,
+	  "defaultCentered": true,
+	  "resizable": true,
+	  "transparent": false,
+	  "saveWindowState": false,
+	  "waitForPageLoad": false,
+	  "defaultHeight": 400,
+	  "defaultWidth": 400,
+	  "backgroundThrottling": true,
+	  "backgroundColor": "red",
+	  "nonPersistent": false,
+	  "appAnalytics": true,
+	  "permissions": {
+		"System": {
+		  "getConfig": true,
+		  "launchExternalProcessx": true
+		}
+	  }
+	},
+	"runtime": {
+	  "arguments": "--inspect --v=1 --nox-sandbox  --disablex-gpu --disablex-software-rasterizer --uservv-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.93 OpenFin/17.85.54.32 Safari/537.3\" ",
+	  "versionxx": "17.85.55.39",
+	  "version": "canary"
+	}
+  }
