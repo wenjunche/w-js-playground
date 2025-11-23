@@ -1,31 +1,78 @@
 {
+	"offlineAccess": true,
 	"startup_app": {
-	  "name": "Test",
-	  "uuid": "Test",
-	  "url": "http://localhost:9000/empty.html",
-	  "autoShow": true,
-	  "frame": true,
-	  "defaultCentered": true,
-	  "resizable": true,
-	  "transparent": false,
-	  "saveWindowState": false,
-	  "waitForPageLoad": false,
-	  "defaultHeight": 400,
-	  "defaultWidth": 400,
-	  "backgroundThrottling": true,
-	  "backgroundColor": "red",
-	  "nonPersistent": false,
-	  "appAnalytics": true,
-	  "permissions": {
-		"System": {
-		  "getConfig": true,
-		  "launchExternalProcessx": true
+		"name": "Empty",
+		"description": "Empty",
+		"url": "http://localhost:9001/empty.html",
+		"urlxx": "https://github.com",
+		"uuid": "Empty",
+		"backgroundThrottling": false,
+		"autoShow": true,
+		"defaultHeight": 400,
+		"defaultWidth": 500,
+		"saveWindowState": false,
+		"backgroundColor": "#1F1E24",
+		"fdc3InteropApi": "1.5",
+		"logManagement": {
+            "url": "https://log-manager-staging.openfin.co/",
+			"enabled": true
+		},
+		"contentNavigation": {
+			"allowlist": [
+			  "http://localhost:9001/*",
+			  "*://*.us02web.zoom.us/*",
+			  "https://github.com/*"
+			]
+		},	  
+		"permissions": {
+			"launchExternalProcess":    true,
+			"webAPIs": [
+				"audio",
+				"video",
+				"openExternal"
+			]
+		},		
+		"permissions1234": {
+			"webAPIs": ["audio", "video", "geolocation", "notifications", "midiSysex", "pointerLock", "fullscreen",
+						"openExternal",
+						"clipboard-read", "clipboard-write", "window-management", "screen-wake-lock"],
+			"System": {
+				"openUrlWithBrowser": {
+				"enabled": true,
+				"protocols": [
+						"mailto"
+					]
+				}
+			}
+		},
+		"preloadxx": [
+			{
+			  "url": "http://localhost:9001/js/preload.js"
+			}
+		],
+        "contentCreationxx": {
+			"rules": [
+			  {
+				"behavior": "block",
+				"match": [
+				  "http://*"
+				]
+			  },
+			  {
+				"behavior": "block",
+				"match": [
+				  "https://*"
+				]
+			  }
+			]
 		}
-	  }
 	},
 	"runtime": {
-	  "arguments": "--inspect --v=1 --nox-sandbox  --disablex-gpu --disablex-software-rasterizer --uservv-agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.93 OpenFin/17.85.54.32 Safari/537.3\" ",
-	  "versionxx": "17.85.55.39",
-	  "version": "canary"
-	}
-  }
+		"arguments": "--v=1 --allow-file-access-from-files  --disablexx-web-security --diagnostics --inspect ",
+		"argumentsxx": "--inspect",
+		"version": "stable",
+		"futureVersion": "42.138.103.1"
+	},
+	"licenseKey": "64605fac-add3-48a0-8710-64b38e96a2dd"
+
+}
